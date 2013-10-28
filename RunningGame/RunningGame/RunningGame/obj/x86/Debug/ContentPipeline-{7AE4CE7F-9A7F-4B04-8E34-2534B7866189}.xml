@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>H:\Gaming\FinalProj\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\always.xnb</Output>
-      <Time>2013-10-24T13:04:50.3714826-04:00</Time>
+      <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\always.xnb</Output>
+      <Time>2013-10-28T10:46:44.1272331-04:00</Time>
     </Item>
     <Item>
       <Source>Sprites\witch_p.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>H:\Gaming\FinalProj\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\witch_p.xnb</Output>
-      <Time>2013-10-24T13:04:50.5705025-04:00</Time>
+      <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\witch_p.xnb</Output>
+      <Time>2013-10-28T10:46:44.1902394-04:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p1.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>H:\Gaming\FinalProj\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p1.xnb</Output>
-      <Time>2013-10-24T13:07:56.8001236-04:00</Time>
+      <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p1.xnb</Output>
+      <Time>2013-10-28T10:46:44.1702374-04:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p2.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>H:\Gaming\FinalProj\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p2.xnb</Output>
-      <Time>2013-10-24T13:07:56.3800816-04:00</Time>
+      <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p2.xnb</Output>
+      <Time>2013-10-28T10:46:44.1752379-04:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p3.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>H:\Gaming\FinalProj\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p3.xnb</Output>
-      <Time>2013-10-24T13:07:56.5160952-04:00</Time>
+      <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p3.xnb</Output>
+      <Time>2013-10-28T10:46:44.1802384-04:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p4.png</Source>
@@ -52,8 +52,80 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>H:\Gaming\FinalProj\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p4.xnb</Output>
-      <Time>2013-10-24T13:07:56.6561092-04:00</Time>
+      <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p4.xnb</Output>
+      <Time>2013-10-28T10:46:44.1852389-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\coin_single.png</Source>
+      <Name>Sprites\coin_single</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\coin_single.xnb</Output>
+      <Time>2013-10-28T10:46:44.1292333-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spring_bg1_1.png</Source>
+      <Name>Sprites\spring_bg1_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_1.xnb</Output>
+      <Time>2013-10-28T10:46:44.136234-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spring_bg1_2.png</Source>
+      <Name>Sprites\spring_bg1_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_2.xnb</Output>
+      <Time>2013-10-28T10:46:44.1412345-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spring_bg1_3.png</Source>
+      <Name>Sprites\spring_bg1_3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_3.xnb</Output>
+      <Time>2013-10-28T10:46:44.1442348-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spring_bg1_4.png</Source>
+      <Name>Sprites\spring_bg1_4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_4.xnb</Output>
+      <Time>2013-10-28T10:46:44.1472351-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spring_bg1_5.png</Source>
+      <Name>Sprites\spring_bg1_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_5.xnb</Output>
+      <Time>2013-10-28T10:46:44.1502354-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spring_p1.png</Source>
+      <Name>Sprites\spring_p1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_p1.xnb</Output>
+      <Time>2013-10-28T10:46:44.1572361-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\spring_p2.png</Source>
+      <Name>Sprites\spring_p2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_p2.xnb</Output>
+      <Time>2013-10-28T10:46:44.1632367-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -62,10 +134,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>H:\Gaming\FinalProj\RunningGame\RunningGame\RunningGameContent\</RootDirectory>
-      <LoggerRootDirectory>H:\Gaming\FinalProj\RunningGame\RunningGame\RunningGame\</LoggerRootDirectory>
-      <IntermediateDirectory>H:\Gaming\FinalProj\RunningGame\RunningGame\RunningGame\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>H:\Gaming\FinalProj\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGameContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

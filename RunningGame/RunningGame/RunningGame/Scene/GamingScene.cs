@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using RunningGame.Utils;
 using RunningGame.Model;
+using RunningGame.Role;
 
 namespace RunningGame.Scene
 {
@@ -26,10 +27,13 @@ namespace RunningGame.Scene
         Texture2D springbg5;
         Texture2D spring1;
         Texture2D spring2;
+        Texture2D alaways;
+        Runner aRunner;
 
         XMLParseUtils aTestParse = new XMLParseUtils();
         TextureObject springbgObj1;
         TextureObject springbgObj2;
+        TextureObject alwaysObject;
 
         float offsetX1 = -10, speed = -0.5f;
         float offsetX2 = 0, offsetX3 = 0, offsetX4 = 0, offsetX5 = 0;
@@ -88,6 +92,7 @@ namespace RunningGame.Scene
             //start beyond left of screen and keep drawing until 
             //the right is beyond the right of the screen
 
+
             //*****************************************************
             float currentLeft1 = position1.X;
             while (currentLeft1 < screenWidth)
@@ -140,6 +145,11 @@ namespace RunningGame.Scene
 
             //******************************* *********************
 
+            //***************************ROLE**********************
+
+            aRunner.Draw(spriteBatch);
+
+            //***************************ROLE**********************
             spriteBatch.End();
             base.Draw(gameTime);
         }
@@ -157,7 +167,7 @@ namespace RunningGame.Scene
 
             spring1 = Game.Content.Load<Texture2D>(@"Sprites\spring_p1");
             spring2 = Game.Content.Load<Texture2D>(@"Sprites\spring_p2");
-
+            alaways = Game.Content.Load<Texture2D>(@"Sprites\always");
             bgWidth1 = springbg1.Width;
             bgWidth2 = springbg2.Width;
             bgWidth3 = springbg3.Width;
@@ -168,6 +178,7 @@ namespace RunningGame.Scene
             screenWidth = Game.GraphicsDevice.Viewport.Bounds.Width;
             springbgObj1 = aTestParse.parseXML(@"config/spring_p1.xml");
             springbgObj2 = aTestParse.parseXML(@"config/spring_p2.xml");
+            alwaysObject = aTestParse.parseXML(@"config/always.xml");
 
             FrameObjects rectangleObj = springbgObj1.getFrameObjectByName(@"spring_bg3_1.png");
             frontbgSourceRect1 = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
@@ -205,6 +216,18 @@ namespace RunningGame.Scene
             roadSlabRect = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
             roadSlabWidth = rectangleObj.Width;
 
+            Rectangle[] tempRunRectArray = new Rectangle[4];
+            rectangleObj = alwaysObject.getFrameObjectByName(@"blue_boy1_run01.png");
+            tempRunRectArray[0] = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
+            rectangleObj = alwaysObject.getFrameObjectByName(@"blue_boy1_run02.png");
+            tempRunRectArray[1] = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
+            rectangleObj = alwaysObject.getFrameObjectByName(@"blue_boy1_run03.png");
+            tempRunRectArray[2] = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
+            rectangleObj = alwaysObject.getFrameObjectByName(@"blue_boy1_run04.png");
+            tempRunRectArray[3] = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
+
+            aRunner = new Runner(alaways, tempRunRectArray, new Rectangle());
+            
             base.LoadContent();
 
         }
@@ -227,6 +250,8 @@ namespace RunningGame.Scene
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
+            
+
 
             //*****************************************************
             position1.X += speed;
@@ -265,6 +290,12 @@ namespace RunningGame.Scene
                 roadMidPos3.X -= roadMidWidth3;
 
             //*****************************************************
+
+            //**********************ROLE*******************************
+
+            aRunner.Update(gameTime);
+
+            //**********************ROLE*******************************
             base.Update(gameTime);
         }
     }
