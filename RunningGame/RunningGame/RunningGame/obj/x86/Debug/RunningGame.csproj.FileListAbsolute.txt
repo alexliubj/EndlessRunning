@@ -71,3 +71,32 @@ C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\Runni
 C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\obj\x86\Debug\RunningGame.exe
 C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\obj\x86\Debug\RunningGame.pdb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\GameConfigue.xml
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\always.xml
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\winter_p1.xml
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\winter_p2.xml
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\winter_p3.xml
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\winter_p4.xml
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\witch_p.xml
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\spring_p1.xml
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\spring_p2.xml
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\always.xnb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\witch_p.xnb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p1.xnb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p2.xnb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p3.xnb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p4.xnb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\coin_single.xnb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_1.xnb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_2.xnb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_3.xnb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_4.xnb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_5.xnb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_p1.xnb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_p2.xnb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\RunningGame.exe
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\RunningGame.pdb
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\obj\x86\Debug\ResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\obj\x86\Debug\RunningGame.exe
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\obj\x86\Debug\RunningGame.pdb

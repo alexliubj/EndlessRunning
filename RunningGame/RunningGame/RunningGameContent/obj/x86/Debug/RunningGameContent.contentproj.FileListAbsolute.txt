@@ -1,3 +1,4 @@
 H:\Gaming\FinalProj\RunningGame\RunningGame\RunningGameContent\obj\x86\Debug\RunningGameContent.contentprojResolveAssemblyReference.cache
 \\vmware-host\Shared Folders\桌面\tempcha\RunningGame\RunningGame\RunningGameContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGameContent\obj\x86\Debug\RunningGameContent.contentprojResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGameContent\obj\x86\Debug\ResolveAssemblyReference.cache

@@ -12,12 +12,21 @@ namespace RunningGame.Role
     {
         Texture2D roleTexture;
         List<RoleRun> roleRun = new List<RoleRun>();
+        RoleJum roleJum;
         private Rectangle[] runAnimations;
         private Rectangle jumpRect;
         private Vector2 jumpVector;
         private Vector2[] runVector;
         const double FRAME_DELAY = 40.2;
         double elapsedTime;
+        bool playedOverOnce;
+
+        public enum RoleStatus { 
+            running =0,
+            jumping = 1,
+            secondJumping = 2,
+            downMoving = 3,
+        }
 
         public Runner(Texture2D text, Rectangle[] runRect, Rectangle jumpRectangle)
         {
@@ -29,6 +38,8 @@ namespace RunningGame.Role
             {
                 roleRun.Add(new RoleRun() { inedex = i, ISRunning = true, position = new Vector2(200, 300) });
             }
+
+            roleJum = new RoleJum() { index = 0, isJumping = false, position = new Vector2(200, 300) };
         }
 
         public Rectangle[] RunAnimationRect
@@ -69,7 +80,13 @@ namespace RunningGame.Role
         {
             foreach (var r in roleRun)
             {
-                sb.Draw(roleTexture, r.position, runAnimations[r.inedex], Color.White);
+                if(r.ISRunning)
+                    sb.Draw(roleTexture, r.position, runAnimations[r.inedex], Color.White);
+            }
+
+            if (roleJum.isJumping)
+            {
+                //play a role jumping
             }
         }
         public void Update(GameTime gt)
@@ -87,10 +104,21 @@ namespace RunningGame.Role
                         if (exp.inedex < roleRun.Count - 1)
                         {
                             exp.inedex++;
+                            exp.ISRunning = false;
                         }
                         else
+                        {
                             exp.inedex = 0;
+                            playedOverOnce = true;
+                            exp.ISRunning = false;
+                        }
                     }
+                }
+
+                if (playedOverOnce)
+                {
+                    foreach (var exp in roleRun)
+                    { exp.ISRunning = true; }
                 }
             }
         }
@@ -101,5 +129,12 @@ namespace RunningGame.Role
         public bool ISRunning;
         public Vector2 position;
         public int inedex;
+    }
+
+    public class RoleJum
+    {
+        public bool isJumping;
+        public Vector2 position;
+        public int index;
     }
 }
