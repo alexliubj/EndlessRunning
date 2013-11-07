@@ -29,7 +29,7 @@ namespace RunningGame
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferHeight = 640;
             graphics.PreferredBackBufferWidth = 1136;
-            Components.Add(menuComp = new MenuComp(this));
+            Components.Add(mainGame = new GamingScene(this));
             Content.RootDirectory = "Content";
         }
 

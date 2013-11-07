@@ -34,7 +34,7 @@ namespace RunningGame.Scene
         TextureObject springbgObj1;
         TextureObject springbgObj2;
         TextureObject alwaysObject;
-
+        KeyboardState oldKeyState;
         float offsetX1 = -10, speed = -0.5f;
         float offsetX2 = 0, offsetX3 = 0, offsetX4 = 0, offsetX5 = 0;
         float offsetY1 = 380, offsetY2 = 0, offsetY3 = 0, offsetY4 = 0, offsetY5 = 250;
@@ -217,6 +217,7 @@ namespace RunningGame.Scene
             roadSlabWidth = rectangleObj.Width;
 
             Rectangle[] tempRunRectArray = new Rectangle[4];
+            Rectangle tempJumpRectangel = new Rectangle();
             rectangleObj = alwaysObject.getFrameObjectByName(@"blue_boy1_run01.png");
             tempRunRectArray[0] = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
             rectangleObj = alwaysObject.getFrameObjectByName(@"blue_boy1_run02.png");
@@ -225,9 +226,10 @@ namespace RunningGame.Scene
             tempRunRectArray[2] = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
             rectangleObj = alwaysObject.getFrameObjectByName(@"blue_boy1_run04.png");
             tempRunRectArray[3] = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
-
-            aRunner = new Runner(alaways, tempRunRectArray, new Rectangle());
-            
+            rectangleObj = alwaysObject.getFrameObjectByName(@"blue_boy1_jump.png");
+            tempJumpRectangel = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
+            aRunner = new Runner(alaways, tempRunRectArray, tempJumpRectangel);
+            aRunner.status = Runner.RoleStatus.running;
             base.LoadContent();
 
         }
@@ -250,7 +252,6 @@ namespace RunningGame.Scene
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
-            
 
 
             //*****************************************************
@@ -288,7 +289,15 @@ namespace RunningGame.Scene
             roadMidPos3.X += roadSpeed;
             if (roadMidPos3.X > 0)
                 roadMidPos3.X -= roadMidWidth3;
+            //**************************for keyboard*****************
 
+            KeyboardState currentKeyState = Keyboard.GetState();
+
+            if (currentKeyState.IsKeyDown(Keys.Space) && !oldKeyState.IsKeyUp(Keys.Space))
+            {
+                aRunner.status = Runner.RoleStatus.jumping;
+            }
+            oldKeyState = currentKeyState;
             //*****************************************************
 
             //**********************ROLE*******************************

@@ -17,9 +17,15 @@ namespace RunningGame.Role
         private Rectangle jumpRect;
         private Vector2 jumpVector;
         private Vector2[] runVector;
-        const double FRAME_DELAY = 40.2;
+        const double FRAME_DELAY = 50.2;
         double elapsedTime;
         bool playedOverOnce;
+        double firstHight;
+        double secondHight;
+        bool isMovingUp = true;
+        Vector2 jumpSpeed = new Vector2(0, -2.5f);
+        Vector2 downSpeed = new Vector2(0, -2.9f);
+        public RoleStatus status = RoleStatus.running;
 
         public enum RoleStatus { 
             running =0,
@@ -36,10 +42,10 @@ namespace RunningGame.Role
 
             for (int i = 0; i < runAnimations.Length; i++)
             {
-                roleRun.Add(new RoleRun() { inedex = i, ISRunning = true, position = new Vector2(200, 300) });
+                roleRun.Add(new RoleRun() { roleIndex = 0, ISRunning = true, position = new Vector2(200, 350) });
             }
 
-            roleJum = new RoleJum() { index = 0, isJumping = false, position = new Vector2(200, 300) };
+            roleJum = new RoleJum() { index = 0, isJumping = true, position = new Vector2(200, 350) };
         }
 
         public Rectangle[] RunAnimationRect
@@ -78,47 +84,85 @@ namespace RunningGame.Role
 
         public void Draw(SpriteBatch sb)
         {
-            foreach (var r in roleRun)
+            if (status == RoleStatus.running)
             {
-                if(r.ISRunning)
-                    sb.Draw(roleTexture, r.position, runAnimations[r.inedex], Color.White);
+                foreach (var r in roleRun)
+                {
+                    if (r.ISRunning)
+                        sb.Draw(roleTexture, r.position, runAnimations[r.roleIndex], Color.White);
+                }
             }
-
-            if (roleJum.isJumping)
+            else if (status == RoleStatus.jumping)
             {
-                //play a role jumping
+               if(roleJum.isJumping)
+               {
+                   sb.Draw(roleTexture, roleJum.position, jumpRect, Color.White);
+                }
+            }
+            else if (status == RoleStatus.downMoving)
+            {
+            }
+            else // second jump
+            {  
             }
         }
         public void Update(GameTime gt)
         {
             elapsedTime += gt.ElapsedGameTime.TotalMilliseconds;
-            if (elapsedTime > FRAME_DELAY)
+            if (status == RoleStatus.jumping)
             {
-                elapsedTime = 0;
-
-                foreach (var exp in roleRun)
+                if (isMovingUp)
                 {
-                    if (exp.ISRunning)
+                    if (roleJum.position.Y >= 280)
                     {
-
-                        if (exp.inedex < roleRun.Count - 1)
+                        roleJum.position += jumpSpeed;
+                    }
+                    else { isMovingUp = !isMovingUp; }
+                }
+                else
+                {
+                    if (roleJum.position.Y <= 350)
+                    {
+                        roleJum.position -= downSpeed;
+                        if (roleJum.position.Y >= 350)
                         {
-                            exp.inedex++;
-                            exp.ISRunning = false;
-                        }
-                        else
-                        {
-                            exp.inedex = 0;
-                            playedOverOnce = true;
-                            exp.ISRunning = false;
+                            status = RoleStatus.running;
+                            isMovingUp = !isMovingUp;
                         }
                     }
                 }
-
-                if (playedOverOnce)
+            }
+            if (elapsedTime > FRAME_DELAY)
+            {
+                elapsedTime = 0;
+                if (status == RoleStatus.running)
                 {
                     foreach (var exp in roleRun)
-                    { exp.ISRunning = true; }
+                    {
+                        if (exp.ISRunning)
+                        {
+                            exp.roleIndex++;
+                            if (exp.roleIndex == runAnimations.Length)
+                            {
+                                exp.roleIndex = 0;
+                            }
+                        }
+                    }
+                }
+                else if (status == RoleStatus.jumping)
+                {
+                    //if (roleJum.position.Y >= 300)
+                    //{
+                    //    roleJum.position += jumpSpeed;
+                    //}
+
+                }
+                else if (status == RoleStatus.downMoving)
+                {
+                }
+                else // seconde jump
+                {
+ 
                 }
             }
         }
@@ -128,7 +172,7 @@ namespace RunningGame.Role
     {
         public bool ISRunning;
         public Vector2 position;
-        public int inedex;
+        public int roleIndex;
     }
 
     public class RoleJum
