@@ -31,6 +31,11 @@ namespace RunningGame
             get { return Program.isBgMusicOn; }
             set { Program.isBgMusicOn = value; }
         }
+
+        public static float jumpHeight
+        {
+            get { return 120; }
+        }
     }
 #endif
 }

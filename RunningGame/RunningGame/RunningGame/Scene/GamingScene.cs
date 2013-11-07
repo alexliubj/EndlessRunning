@@ -295,7 +295,10 @@ namespace RunningGame.Scene
 
             if (currentKeyState.IsKeyDown(Keys.Space) && !oldKeyState.IsKeyUp(Keys.Space))
             {
-                aRunner.status = Runner.RoleStatus.jumping;
+                if (aRunner.status == Runner.RoleStatus.running)
+                    aRunner.status = Runner.RoleStatus.jumping;
+                if (aRunner.status == Runner.RoleStatus.jumping)
+                    aRunner.setSecondJumpStatus();
             }
             oldKeyState = currentKeyState;
             //*****************************************************

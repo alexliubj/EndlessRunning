@@ -23,9 +23,11 @@ namespace RunningGame.Role
         double firstHight;
         double secondHight;
         bool isMovingUp = true;
+        bool isSecondMovingUp = true;
         Vector2 jumpSpeed = new Vector2(0, -2.5f);
         Vector2 downSpeed = new Vector2(0, -2.9f);
         public RoleStatus status = RoleStatus.running;
+        private float theHeightJump;
 
         public enum RoleStatus { 
             running =0,
@@ -34,6 +36,11 @@ namespace RunningGame.Role
             downMoving = 3,
         }
 
+        public void setSecondJumpStatus()
+        {
+            status = RoleStatus.secondJumping;
+            theHeightJump = roleJum.position.Y + Program.jumpHeight;
+        }
         public Runner(Texture2D text, Rectangle[] runRect, Rectangle jumpRectangle)
         {
             roleTexture = text;
@@ -132,6 +139,11 @@ namespace RunningGame.Role
                     }
                 }
             }
+            if(status == RoleStatus.secondJumping)
+            {
+
+            }
+
             if (elapsedTime > FRAME_DELAY)
             {
                 elapsedTime = 0;
@@ -151,11 +163,6 @@ namespace RunningGame.Role
                 }
                 else if (status == RoleStatus.jumping)
                 {
-                    //if (roleJum.position.Y >= 300)
-                    //{
-                    //    roleJum.position += jumpSpeed;
-                    //}
-
                 }
                 else if (status == RoleStatus.downMoving)
                 {
