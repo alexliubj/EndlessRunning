@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coins\ConsManager.cs" />
+    <Compile Include="Componets\MenuComp.cs" />
     <Compile Include="DataEnv\DataEnv.cs" />
     <Compile Include="Map\MapManager.cs" />
     <Compile Include="Model\FrameObjects.cs" />
@@ -98,6 +99,7 @@
     <Content Include="Config\GameConfigue.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="cover_p2.png" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>

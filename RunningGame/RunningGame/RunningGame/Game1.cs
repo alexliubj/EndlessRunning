@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using RunningGame.Utils;
 using RunningGame.Scene;
+using RunningGame.Componets;
 
 namespace RunningGame
 {
@@ -21,13 +22,14 @@ namespace RunningGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         DrawableGameComponent mainGame;
+        DrawableGameComponent menuComp;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferHeight = 640;
             graphics.PreferredBackBufferWidth = 1136;
-            Components.Add(mainGame = new GamingScene(this));
+            Components.Add(menuComp = new MenuComp(this));
             Content.RootDirectory = "Content";
         }
 

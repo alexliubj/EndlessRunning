@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\always.xnb</Output>
-      <Time>2013-09-30T14:28:16+08:00</Time>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\always.xnb</Output>
+      <Time>2013-11-04T03:16:05.6301033-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\witch_p.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\witch_p.xnb</Output>
-      <Time>2013-09-30T14:28:16+08:00</Time>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\witch_p.xnb</Output>
+      <Time>2013-11-04T03:16:05.6541047-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p1.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p1.xnb</Output>
-      <Time>2013-09-30T14:28:16+08:00</Time>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p1.xnb</Output>
+      <Time>2013-11-04T03:16:05.6471043-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p2.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p2.xnb</Output>
-      <Time>2013-09-30T14:28:16+08:00</Time>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p2.xnb</Output>
+      <Time>2013-11-04T03:16:05.6491044-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p3.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p3.xnb</Output>
-      <Time>2013-09-30T14:28:16+08:00</Time>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p3.xnb</Output>
+      <Time>2013-11-04T03:16:05.6501044-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p4.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p4.xnb</Output>
-      <Time>2013-09-30T14:28:16+08:00</Time>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p4.xnb</Output>
+      <Time>2013-11-04T03:16:05.6521046-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\coin_single.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\coin_single.xnb</Output>
-      <Time>2013-09-30T14:28:16+08:00</Time>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\coin_single.xnb</Output>
+      <Time>2013-11-04T03:16:05.6301033-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_bg1_1.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_1.xnb</Output>
-      <Time>2013-09-30T14:28:16+08:00</Time>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_1.xnb</Output>
+      <Time>2013-11-04T03:16:05.6311034-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_bg1_2.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_2.xnb</Output>
-      <Time>2013-09-30T14:28:16+08:00</Time>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_2.xnb</Output>
+      <Time>2013-11-04T03:16:05.6321034-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_bg1_3.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_3.xnb</Output>
-      <Time>2013-09-30T14:28:16+08:00</Time>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_3.xnb</Output>
+      <Time>2013-11-04T03:16:05.6331035-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_bg1_4.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_4.xnb</Output>
-      <Time>2013-09-30T14:28:16+08:00</Time>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_4.xnb</Output>
+      <Time>2013-11-04T03:16:05.6341035-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_bg1_5.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_5.xnb</Output>
-      <Time>2013-09-30T14:28:16+08:00</Time>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_5.xnb</Output>
+      <Time>2013-11-04T03:16:05.6361036-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_p1.png</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_p1.xnb</Output>
-      <Time>2013-09-30T14:28:16+08:00</Time>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_p1.xnb</Output>
+      <Time>2013-11-04T03:16:05.6401039-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_p2.png</Source>
@@ -124,8 +124,62 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_p2.xnb</Output>
-      <Time>2013-09-30T14:28:16+08:00</Time>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_p2.xnb</Output>
+      <Time>2013-11-04T03:16:05.643104-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\cover_p2.png</Source>
+      <Name>Sprites\cover_p2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\cover_p2.xnb</Output>
+      <Time>2013-11-07T05:05:55.7563293-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\cover_p1.png</Source>
+      <Name>Sprites\cover_p1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\cover_p1.xnb</Output>
+      <Time>2013-11-07T05:06:14.3163909-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\cover2.jpg</Source>
+      <Name>Sprites\cover2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\cover2.xnb</Output>
+      <Time>2013-11-07T05:06:54.1466691-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\easy.png</Source>
+      <Name>Sprites\easy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\easy.xnb</Output>
+      <Time>2009-11-05T16:09:56-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\hard.png</Source>
+      <Name>Sprites\hard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\hard.xnb</Output>
+      <Time>2009-11-05T16:09:56-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\medium.png</Source>
+      <Name>Sprites\medium</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\medium.xnb</Output>
+      <Time>2009-11-05T16:09:56-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -133,39 +187,39 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGameContent\</RootDirectory>
-      <LoggerRootDirectory>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\</LoggerRootDirectory>
-      <IntermediateDirectory>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGameContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>\\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGameContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGameContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+08:00</Value>
+        <Value>2010-08-23T15:41:18-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T12:41:18+08:00</Value>
+        <Value>2010-08-23T15:41:18-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+08:00</Value>
+        <Value>2010-08-23T15:41:18-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+08:00</Value>
+        <Value>2010-08-23T15:41:18-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+08:00</Value>
+        <Value>2010-08-23T15:41:18-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T12:41:18+08:00</Value>
+        <Value>2010-08-23T15:41:18-05:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2013-09-14T01:50:05.9670275+08:00</Value>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-11-03T11:37:05.1325377-06:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
