@@ -15,6 +15,22 @@ namespace RunningGame
                 game.Run();
             }
         }
+
+        private static bool isSoundOn;
+
+        public static bool IsSoundOn
+        {
+            get { return Program.isSoundOn; }
+            set { Program.isSoundOn = value; }
+        }
+
+        private static bool isBgMusicOn;
+
+        public static bool IsBgMusicOn
+        {
+            get { return Program.isBgMusicOn; }
+            set { Program.isBgMusicOn = value; }
+        }
     }
 #endif
 }

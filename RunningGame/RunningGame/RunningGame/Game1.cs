@@ -21,17 +21,122 @@ namespace RunningGame
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        DrawableGameComponent mainGame;
         DrawableGameComponent menuComp;
+        DrawableGameComponent mainGame;
+        DrawableGameComponent helpComp;
+        DrawableGameComponent aboutComp;
+
+        enum MenuIndexs
+        { 
+            MenuIndex = 0,
+            MainIndex = 1, 
+            HelpIndex = 2, 
+            AboutIndex = 3, 
+        };
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferHeight = 640;
             graphics.PreferredBackBufferWidth = 1136;
+            Components.Add(menuComp = new MainScene(this));
             Components.Add(mainGame = new GamingScene(this));
+            Components.Add(helpComp = new HelpScene(this));
+            Components.Add(aboutComp = new AboutScene(this));
+
+            this.ComponetsInitialise();
+
             Content.RootDirectory = "Content";
         }
+
+        /// <summary>
+        /// init all the componets
+        /// </summary>
+        private void ComponetsInitialise()
+        {
+            mainGame.Enabled = false;
+            mainGame.Visible = false;
+
+            helpComp.Enabled = false;
+            helpComp.Visible = false;
+
+            aboutComp.Enabled = false;
+            aboutComp.Visible = false;
+        }
+
+        /// <summary>
+        /// Switch Componets
+        /// </summary>
+        /// <param name="componetId"></param>
+        public void ChangeComponets(int componetId)
+        {
+            switch (componetId)
+            {
+                case (int)MenuIndexs.MenuIndex:
+                    {
+                        menuComp.Enabled = true;
+                        menuComp.Visible = true;
+
+                        mainGame.Enabled = false;
+                        mainGame.Visible = false;
+
+                        helpComp.Enabled = false;
+                        helpComp.Visible = false;
+
+                        aboutComp.Enabled = false;
+                        aboutComp.Visible = false;
+                    }
+                    break;
+                case (int)MenuIndexs.AboutIndex:
+                    {
+                        menuComp.Enabled = false;
+                        menuComp.Visible = false;
+
+                        mainGame.Enabled = false;
+                        mainGame.Visible = false;
+
+                        helpComp.Enabled = false;
+                        helpComp.Visible = false;
+
+                        aboutComp.Enabled = true;
+                        aboutComp.Visible = true;
+                    }
+                    break;
+                case (int)MenuIndexs.HelpIndex:
+                    {
+                        menuComp.Enabled = false;
+                        menuComp.Visible = false;
+
+                        mainGame.Enabled = false;
+                        mainGame.Visible = false;
+
+                        helpComp.Enabled = true;
+                        helpComp.Visible = true;
+
+                        aboutComp.Enabled = false;
+                        aboutComp.Visible = false;
+                    }
+                    break;
+                case (int)MenuIndexs.MainIndex:
+                    {
+                        menuComp.Enabled = false;
+                        menuComp.Visible = false;
+
+                        mainGame.Enabled = true;
+                        mainGame.Visible = true;
+
+                        helpComp.Enabled = false;
+                        helpComp.Visible = false;
+
+                        aboutComp.Enabled = false;
+                        aboutComp.Visible = false;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
 
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.

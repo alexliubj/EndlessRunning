@@ -76,7 +76,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coins\ConsManager.cs" />
-    <Compile Include="Componets\MenuComp.cs" />
+    <Compile Include="Scene\HelpScene.cs" />
+    <Compile Include="Scene\MainScene.cs" />
     <Compile Include="DataEnv\DataEnv.cs" />
     <Compile Include="Map\MapManager.cs" />
     <Compile Include="Model\FrameObjects.cs" />
@@ -92,7 +93,6 @@
     <Compile Include="Scene\AboutScene.cs" />
     <Compile Include="Scene\GamingScene.cs" />
     <Compile Include="Scene\ItemListScene.cs" />
-    <Compile Include="Scene\MainScene.cs" />
     <Compile Include="Utils\XMLParseUtils.cs" />
   </ItemGroup>
   <ItemGroup>
