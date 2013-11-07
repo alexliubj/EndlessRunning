@@ -75,7 +75,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coins\ConsManager.cs" />
+    <Compile Include="Coins\CoinsManager.cs" />
     <Compile Include="Scene\HelpScene.cs" />
     <Compile Include="Scene\MainScene.cs" />
     <Compile Include="DataEnv\DataEnv.cs" />
