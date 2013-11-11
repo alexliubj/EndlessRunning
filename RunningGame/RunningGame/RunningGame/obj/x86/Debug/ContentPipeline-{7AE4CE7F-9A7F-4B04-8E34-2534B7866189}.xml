@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\always.xnb</Output>
-      <Time>2013-11-07T12:38:49.7986462-05:00</Time>
+      <Time>2013-11-11T10:26:23.9585847-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\witch_p.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\witch_p.xnb</Output>
-      <Time>2013-11-07T12:38:49.884801-05:00</Time>
+      <Time>2013-11-11T10:26:24.0455934-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p1.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p1.xnb</Output>
-      <Time>2013-11-07T12:38:49.8587542-05:00</Time>
+      <Time>2013-11-11T10:26:24.0245913-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p2.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p2.xnb</Output>
-      <Time>2013-11-07T12:38:49.8667686-05:00</Time>
+      <Time>2013-11-11T10:26:24.0305919-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p3.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p3.xnb</Output>
-      <Time>2013-11-07T12:38:49.8717776-05:00</Time>
+      <Time>2013-11-11T10:26:24.0355924-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p4.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p4.xnb</Output>
-      <Time>2013-11-07T12:38:49.8787902-05:00</Time>
+      <Time>2013-11-11T10:26:24.041593-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\coin_single.png</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\coin_single.xnb</Output>
-      <Time>2013-11-07T12:38:49.799648-05:00</Time>
+      <Time>2013-11-11T10:26:23.9605849-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_bg1_1.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_1.xnb</Output>
-      <Time>2013-11-07T12:38:49.824693-05:00</Time>
+      <Time>2013-11-11T10:26:23.9885877-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_bg1_2.png</Source>
@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_2.xnb</Output>
-      <Time>2013-11-07T12:38:49.8307038-05:00</Time>
+      <Time>2013-11-11T10:26:23.9945883-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_bg1_3.png</Source>
@@ -89,7 +89,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_3.xnb</Output>
-      <Time>2013-11-07T12:38:49.8337092-05:00</Time>
+      <Time>2013-11-11T10:26:23.9975886-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_bg1_4.png</Source>
@@ -98,7 +98,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_4.xnb</Output>
-      <Time>2013-11-07T12:38:49.8357128-05:00</Time>
+      <Time>2013-11-11T10:26:24.0005889-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_bg1_5.png</Source>
@@ -107,7 +107,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_5.xnb</Output>
-      <Time>2013-11-07T12:38:49.8387182-05:00</Time>
+      <Time>2013-11-11T10:26:24.0035892-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_p1.png</Source>
@@ -116,7 +116,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_p1.xnb</Output>
-      <Time>2013-11-07T12:38:49.8457308-05:00</Time>
+      <Time>2013-11-11T10:26:24.01159-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_p2.png</Source>
@@ -125,7 +125,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_p2.xnb</Output>
-      <Time>2013-11-07T12:38:49.8517416-05:00</Time>
+      <Time>2013-11-11T10:26:24.0175906-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\cover_p2.png</Source>
@@ -134,7 +134,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\cover_p2.xnb</Output>
-      <Time>2013-11-07T12:38:49.8136732-05:00</Time>
+      <Time>2013-11-11T10:26:23.9765865-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\cover_p1.png</Source>
@@ -143,7 +143,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\cover_p1.xnb</Output>
-      <Time>2013-11-07T12:38:49.8076624-05:00</Time>
+      <Time>2013-11-11T10:26:23.9705859-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\cover2.jpg</Source>
@@ -152,7 +152,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\cover2.xnb</Output>
-      <Time>2013-11-07T12:38:49.8026534-05:00</Time>
+      <Time>2013-11-11T10:26:23.9645853-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\easy.png</Source>
@@ -161,7 +161,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\easy.xnb</Output>
-      <Time>2013-11-07T12:38:49.8156768-05:00</Time>
+      <Time>2013-11-11T10:26:23.9785867-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\hard.png</Source>
@@ -170,7 +170,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\hard.xnb</Output>
-      <Time>2013-11-07T12:38:49.8166786-05:00</Time>
+      <Time>2013-11-11T10:26:23.9805869-05:00</Time>
     </Item>
     <Item>
       <Source>Sprites\medium.png</Source>
@@ -179,7 +179,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\medium.xnb</Output>
-      <Time>2013-11-07T12:38:49.8186822-05:00</Time>
+      <Time>2013-11-11T10:26:23.9825871-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
