@@ -140,3 +140,4 @@ C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\Runni
 C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\easy.xnb
 C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\hard.xnb
 C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\medium.xnb
+C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Maps\m01.txt

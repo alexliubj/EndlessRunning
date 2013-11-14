@@ -18,3 +18,4 @@ Content\Sprites\cover2.xnb
 Content\Sprites\easy.xnb
 Content\Sprites\hard.xnb
 Content\Sprites\medium.xnb
+Content\Maps\m01.txt

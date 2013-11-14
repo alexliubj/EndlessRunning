@@ -18,6 +18,7 @@ Content\Sprites\cover2.xnb
 Content\Sprites\easy.xnb
 Content\Sprites\hard.xnb
 Content\Sprites\medium.xnb
+Content\Maps\m01.txt
 Config\GameConfigue.xml
 Config\always.xml
 Config\winter_p1.xml

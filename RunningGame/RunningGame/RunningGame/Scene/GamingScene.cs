@@ -11,6 +11,8 @@ using Microsoft.Xna.Framework.Media;
 using RunningGame.Utils;
 using RunningGame.Model;
 using RunningGame.Role;
+using RunningGame.Map;
+using System.IO;
 
 namespace RunningGame.Scene
 {
@@ -29,6 +31,7 @@ namespace RunningGame.Scene
         Texture2D spring2;
         Texture2D alaways;
         Runner aRunner;
+        MapManager map1;
 
         XMLParseUtils aTestParse = new XMLParseUtils();
         TextureObject springbgObj1;
@@ -142,7 +145,7 @@ namespace RunningGame.Scene
                 currentmid3 += roadMidWidth3;
             }
 
-
+            map1.Draw(spriteBatch);
             //******************************* *********************
 
             //***************************ROLE**********************
@@ -230,6 +233,13 @@ namespace RunningGame.Scene
             tempJumpRectangel = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
             aRunner = new Runner(alaways, tempRunRectArray, tempJumpRectangel);
             aRunner.status = Runner.RoleStatus.running;
+
+            //********************************Load coins*************************************
+            map1 = new MapManager(Game.Content, Path.Combine(Game.Content.RootDirectory, @"Maps\m01.txt"), @"Sprites\coin_single", new Vector2(32, 32), '-');
+            map1.AddRegion('a', new Rectangle(0, 0, 32, 32));
+            map1.AddRegion('b', new Rectangle(0, 0, 32, 32));
+          //  map1.AddBackground("grungysky");
+            //*******************************************************************************
             base.LoadContent();
 
         }
