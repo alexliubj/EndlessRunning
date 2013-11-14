@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\always.xnb</Output>
-      <Time>2013-11-04T03:16:05.6301033-06:00</Time>
+      <Time>2013-11-07T20:32:51.7820425-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\witch_p.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\witch_p.xnb</Output>
-      <Time>2013-11-04T03:16:05.6541047-06:00</Time>
+      <Time>2013-11-07T20:32:51.8140443-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p1.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p1.xnb</Output>
-      <Time>2013-11-04T03:16:05.6471043-06:00</Time>
+      <Time>2013-11-07T20:32:51.808044-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p2.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p2.xnb</Output>
-      <Time>2013-11-04T03:16:05.6491044-06:00</Time>
+      <Time>2013-11-07T20:32:51.8100441-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p3.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p3.xnb</Output>
-      <Time>2013-11-04T03:16:05.6501044-06:00</Time>
+      <Time>2013-11-07T20:32:51.8110442-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\winter_p4.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p4.xnb</Output>
-      <Time>2013-11-04T03:16:05.6521046-06:00</Time>
+      <Time>2013-11-07T20:32:51.8130443-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\coin_single.png</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\coin_single.xnb</Output>
-      <Time>2013-11-04T03:16:05.6301033-06:00</Time>
+      <Time>2013-11-07T20:32:51.7830426-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_bg1_1.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_1.xnb</Output>
-      <Time>2013-11-04T03:16:05.6311034-06:00</Time>
+      <Time>2013-11-07T20:32:51.7940432-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_bg1_2.png</Source>
@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_2.xnb</Output>
-      <Time>2013-11-04T03:16:05.6321034-06:00</Time>
+      <Time>2013-11-07T20:32:51.7950433-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_bg1_3.png</Source>
@@ -89,7 +89,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_3.xnb</Output>
-      <Time>2013-11-04T03:16:05.6331035-06:00</Time>
+      <Time>2013-11-07T20:32:51.7960433-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_bg1_4.png</Source>
@@ -98,7 +98,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_4.xnb</Output>
-      <Time>2013-11-04T03:16:05.6341035-06:00</Time>
+      <Time>2013-11-07T20:32:51.7970434-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_bg1_5.png</Source>
@@ -107,7 +107,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_5.xnb</Output>
-      <Time>2013-11-04T03:16:05.6361036-06:00</Time>
+      <Time>2013-11-07T20:32:51.7980434-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_p1.png</Source>
@@ -116,7 +116,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_p1.xnb</Output>
-      <Time>2013-11-04T03:16:05.6401039-06:00</Time>
+      <Time>2013-11-07T20:32:51.8020437-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\spring_p2.png</Source>
@@ -125,7 +125,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_p2.xnb</Output>
-      <Time>2013-11-04T03:16:05.643104-06:00</Time>
+      <Time>2013-11-07T20:32:51.8040438-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\cover_p2.png</Source>
@@ -134,7 +134,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\cover_p2.xnb</Output>
-      <Time>2013-11-07T05:05:55.7563293-06:00</Time>
+      <Time>2013-11-07T20:32:51.7920431-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\cover_p1.png</Source>
@@ -143,7 +143,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\cover_p1.xnb</Output>
-      <Time>2013-11-07T05:06:14.3163909-06:00</Time>
+      <Time>2013-11-07T20:32:51.7880429-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\cover2.jpg</Source>
@@ -152,7 +152,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\cover2.xnb</Output>
-      <Time>2013-11-07T05:06:54.1466691-06:00</Time>
+      <Time>2013-11-07T20:32:51.7840426-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\easy.png</Source>
@@ -161,7 +161,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\easy.xnb</Output>
-      <Time>2009-11-05T16:09:56-06:00</Time>
+      <Time>2013-11-07T20:32:51.7930431-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\hard.png</Source>
@@ -170,7 +170,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\hard.xnb</Output>
-      <Time>2009-11-05T16:09:56-06:00</Time>
+      <Time>2013-11-07T20:32:51.7930431-06:00</Time>
     </Item>
     <Item>
       <Source>Sprites\medium.png</Source>
@@ -179,7 +179,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\medium.xnb</Output>
-      <Time>2009-11-05T16:09:56-06:00</Time>
+      <Time>2013-11-07T20:32:51.7930431-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -34,8 +34,14 @@ namespace RunningGame
 
         public static float jumpHeight
         {
-            get { return 120; }
+            get { return 80; }
         }
+
+        public static float firstJumpHeight
+        {
+            get { return 280; }
+        }
+
     }
 #endif
 }

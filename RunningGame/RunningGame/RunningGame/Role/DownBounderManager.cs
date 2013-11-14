@@ -15,6 +15,5 @@ namespace RunningGame.Role
     public class DownBlock
     {
         public bool isAlive;
-        public V
     }
 }

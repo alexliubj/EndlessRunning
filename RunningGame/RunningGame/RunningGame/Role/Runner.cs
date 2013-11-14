@@ -22,12 +22,15 @@ namespace RunningGame.Role
         bool playedOverOnce;
         double firstHight;
         double secondHight;
-        bool isMovingUp = true;
+        private bool isMovingUp = true;
+        bool secondIsMovingUp = true;
         bool isSecondMovingUp = true;
         Vector2 jumpSpeed = new Vector2(0, -2.5f);
         Vector2 downSpeed = new Vector2(0, -2.9f);
         public RoleStatus status = RoleStatus.running;
         private float theHeightJump;
+        private Vector2 firstJumpMax;
+        private Vector2 SecontJumpMax;
 
         public enum RoleStatus { 
             running =0,
@@ -39,7 +42,8 @@ namespace RunningGame.Role
         public void setSecondJumpStatus()
         {
             status = RoleStatus.secondJumping;
-            theHeightJump = roleJum.position.Y + Program.jumpHeight;
+            theHeightJump = roleJum.position.Y - Program.jumpHeight;
+            secondIsMovingUp = true;
         }
         public Runner(Texture2D text, Rectangle[] runRect, Rectangle jumpRectangle)
         {
@@ -110,7 +114,11 @@ namespace RunningGame.Role
             {
             }
             else // second jump
-            {  
+            {
+                if (roleJum.isJumping)
+                {
+                    sb.Draw(roleTexture, roleJum.position, jumpRect, Color.White);
+                }
             }
         }
         public void Update(GameTime gt)
@@ -124,7 +132,33 @@ namespace RunningGame.Role
                     {
                         roleJum.position += jumpSpeed;
                     }
-                    else { isMovingUp = !isMovingUp; }
+                    else { 
+                               isMovingUp = false; 
+                    }
+                }
+                else
+                {
+                    if (roleJum.position.Y <= 350)
+                    {
+                        roleJum.position -= downSpeed;
+                        if (roleJum.position.Y >= 350)
+                        {
+                             status = RoleStatus.running;
+                            isMovingUp = true;
+                        }
+                    }
+                }
+            }
+            if(status == RoleStatus.secondJumping)
+            {
+                if (secondIsMovingUp)
+                {
+                    isMovingUp = true;
+                    if (roleJum.position.Y >= theHeightJump)
+                    {
+                        roleJum.position += jumpSpeed;
+                    }
+                    else { secondIsMovingUp = false; }
                 }
                 else
                 {
@@ -134,13 +168,10 @@ namespace RunningGame.Role
                         if (roleJum.position.Y >= 350)
                         {
                             status = RoleStatus.running;
-                            isMovingUp = !isMovingUp;
+                            secondIsMovingUp = true;
                         }
                     }
                 }
-            }
-            if(status == RoleStatus.secondJumping)
-            {
 
             }
 

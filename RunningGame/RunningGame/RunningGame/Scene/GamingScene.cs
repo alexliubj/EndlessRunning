@@ -291,16 +291,23 @@ namespace RunningGame.Scene
                 roadMidPos3.X -= roadMidWidth3;
             //**************************for keyboard*****************
 
-            KeyboardState currentKeyState = Keyboard.GetState();
+             KeyboardState newState = Keyboard.GetState();
 
-            if (currentKeyState.IsKeyDown(Keys.Space) && !oldKeyState.IsKeyUp(Keys.Space))
-            {
-                if (aRunner.status == Runner.RoleStatus.running)
-                    aRunner.status = Runner.RoleStatus.jumping;
-                if (aRunner.status == Runner.RoleStatus.jumping)
-                    aRunner.setSecondJumpStatus();
-            }
-            oldKeyState = currentKeyState;
+            // Is the SPACE key down?
+             if (newState.IsKeyDown(Keys.Space))
+             {
+                 // If not down last update, key has just been pressed.
+                 if (!oldKeyState.IsKeyDown(Keys.Space))
+                 {
+                     if (aRunner.status == Runner.RoleStatus.running)
+                          aRunner.status = Runner.RoleStatus.jumping;
+                     else if (aRunner.status == Runner.RoleStatus.jumping)
+                         aRunner.setSecondJumpStatus();
+                     else
+                     { }
+                 }
+             }
+             oldKeyState = newState;
             //*****************************************************
 
             //**********************ROLE*******************************
