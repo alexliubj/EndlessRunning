@@ -19,6 +19,7 @@ namespace RunningGame.Map
         public int xIndex;
         public int yIndex;
         public char tileValue;
+        public Vector2 positonTiles;
     }
 
     public class MapManager
@@ -26,7 +27,7 @@ namespace RunningGame.Map
         ContentManager content;
         string filename;
         public List<Titles> listTiles = new List<Titles>();
-        public Vector2 deltaSpeed = Vector2.Zero;
+        public Vector2 deltaSpeed = new Vector2(-0.5f, 0);
         Vector2 tileDimensions = Vector2.Zero;
         public Vector2 TileDimensions
         {
@@ -102,6 +103,8 @@ namespace RunningGame.Map
                     atile.xIndex = i;
                     atile.yIndex = j;
                     atile.tileValue = c;
+                    atile.positonTiles = new Vector2(tileDimensions.X * i + deltaSpeed.X,
+                        tileDimensions.Y * j + deltaSpeed.Y);
                     listTiles.Add(atile);
                 }
             }
@@ -145,8 +148,7 @@ namespace RunningGame.Map
             {
                 if (t.tileValue != emptyTile && t.isAlive) 
                 {
-                    spritebatch.Draw(TileSheet, new Vector2(tileDimensions.X * t.xIndex + deltaSpeed.X, 
-                        tileDimensions.Y * t.yIndex + deltaSpeed.Y),
+                    spritebatch.Draw(TileSheet, t.positonTiles,
                             tileRegions[t.tileValue], Color.White);
                 }
             }
@@ -158,7 +160,7 @@ namespace RunningGame.Map
             {
                 if (t.isAlive)
                 {
-                    deltaSpeed = new Vector2(deltaSpeed.X - 0.005f, deltaSpeed.Y);
+                    t.positonTiles = new Vector2(t.positonTiles.X + deltaSpeed.X, t.positonTiles.Y);
                 }
             }
         }

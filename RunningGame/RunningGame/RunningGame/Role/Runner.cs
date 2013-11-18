@@ -39,6 +39,22 @@ namespace RunningGame.Role
             downMoving = 3,
         }
 
+        public Rectangle CurrentRectangle()
+        {
+            if (status == RoleStatus.running)
+            {
+                return new Rectangle((int)roleRun[0].position.X, (int)roleRun[0].position.Y, runAnimations[0].Width, runAnimations[0].Height);
+            }
+            else if (status == RoleStatus.jumping || status == RoleStatus.secondJumping)
+            {
+                return new Rectangle((int)roleJum.position.X, (int)roleJum.position.Y, jumpRect.Width, jumpRect.Height);
+            }
+            else
+            {
+                return new Rectangle();
+            }
+        }
+
         public void setSecondJumpStatus()
         {
             status = RoleStatus.secondJumping;
