@@ -10,16 +10,23 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace RunningGame.Map
 {
+    /// <summary>
+    /// A coin from the map
+    /// </summary>
     public class Titles
     {
-        bool isAlive;
-
+        public bool isAlive;
+        public int xIndex;
+        public int yIndex;
+        public char tileValue;
     }
+
     public class MapManager
     {
         ContentManager content;
         string filename;
-
+        public List<Titles> listTiles = new List<Titles>();
+        public Vector2 deltaSpeed = Vector2.Zero;
         Vector2 tileDimensions = Vector2.Zero;
         public Vector2 TileDimensions
         {
@@ -28,14 +35,12 @@ namespace RunningGame.Map
 
         Vector2 mapDimensions = Vector2.Zero;
 
-
-
-        char[,] tiles;
-        public char[,] Tiles
-        {
-            get { return tiles; }
-            protected set { tiles = value; }
-        }
+        //char[,] tiles;
+        //public char[,] Tiles
+        //{
+        //    get { return tiles; }
+        //    protected set { tiles = value; }
+        //}
 
         char emptyTile;
 
@@ -84,7 +89,7 @@ namespace RunningGame.Map
                 line = reader.ReadLine();
             }
 
-            tiles = new char[width, height];
+            //tiles = new char[width, height];
 
             for (int j = 0; j < height; j++)
             {
@@ -92,7 +97,12 @@ namespace RunningGame.Map
                 for (int i = 0; i < width; i++)
                 {
                     char c = l[i];
-                    tiles[i, j] = c;
+                    Titles atile = new Titles();
+                    atile.isAlive = true;
+                    atile.xIndex = i;
+                    atile.yIndex = j;
+                    atile.tileValue = c;
+                    listTiles.Add(atile);
                 }
             }
 
@@ -131,21 +141,26 @@ namespace RunningGame.Map
 
         private void DrawTiles(SpriteBatch spritebatch)
         {
-            for (int j = 0; j < mapDimensions.Y; j++)
+            foreach (Titles t in listTiles)
             {
-                for (int i = 0; i < mapDimensions.X; i++)
+                if (t.tileValue != emptyTile && t.isAlive) 
                 {
-                    if (tiles[i, j] != emptyTile)
-                    {
-                        spritebatch.Draw(TileSheet, new Vector2(tileDimensions.X * i, tileDimensions.Y * j), 
-                            tileRegions[tiles[i, j]], Color.White);
-                    }
+                    spritebatch.Draw(TileSheet, new Vector2(tileDimensions.X * t.xIndex + deltaSpeed.X, 
+                        tileDimensions.Y * t.yIndex + deltaSpeed.Y),
+                            tileRegions[t.tileValue], Color.White);
                 }
             }
         }
 
         public void UpdateTiles()
-        { 
+        {
+            foreach (Titles t in listTiles)
+            {
+                if (t.isAlive)
+                {
+                    deltaSpeed = new Vector2(deltaSpeed.X - 0.005f, deltaSpeed.Y);
+                }
+            }
         }
     }
 }

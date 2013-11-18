@@ -99,41 +99,6 @@ C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\Runni
 \\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 \\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\obj\x86\Debug\RunningGame.exe
 \\vmware-host\Shared Folders\桌面\Study\EndlessRunning\EndlessRunning\RunningGame\RunningGame\RunningGame\obj\x86\Debug\RunningGame.pdb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\GameConfigue.xml
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\always.xml
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\winter_p1.xml
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\winter_p2.xml
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\winter_p3.xml
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\winter_p4.xml
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\witch_p.xml
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\spring_p1.xml
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Config\spring_p2.xml
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\always.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\witch_p.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p1.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p2.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p3.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\winter_p4.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\coin_single.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_1.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_2.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_3.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_4.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_bg1_5.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_p1.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\spring_p2.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\RunningGame.exe
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\RunningGame.pdb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\obj\x86\Debug\RunningGame.csprojResolveAssemblyReference.cache
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\obj\x86\Debug\RunningGame.exe
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\obj\x86\Debug\RunningGame.pdb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\cover_p2.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\cover_p1.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\cover2.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\easy.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\hard.xnb
-C:\Users\Administrator\Desktop\Projects\db\CSharpForm\TestConnetORCL\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\medium.xnb
 C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\cover_p2.xnb
 C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\cover_p1.xnb
 C:\Users\300756885\Documents\GitHub\EndlessRunning\RunningGame\RunningGame\RunningGame\bin\x86\Debug\Content\Sprites\cover2.xnb

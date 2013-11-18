@@ -21,6 +21,14 @@ namespace RunningGame.Scene
     /// </summary>
     public class GamingScene : DrawableGameComponent
     {
+        //**************SPRITEFONT*************
+        SpriteFont distanceFont;
+        Vector2 distanceFontPostion;
+        int score = 0;
+        int distance = 0;
+        SpriteFont scoreFont;
+        Vector2 scoreFontPosition;
+        //**************SPRITEFONT*************
         SpriteBatch spriteBatch;
         Texture2D springbg1;
         Texture2D springbg2;
@@ -95,7 +103,7 @@ namespace RunningGame.Scene
             //start beyond left of screen and keep drawing until 
             //the right is beyond the right of the screen
 
-
+            distance = (int)gameTime.TotalGameTime.Seconds *100;
             //*****************************************************
             float currentLeft1 = position1.X;
             while (currentLeft1 < screenWidth)
@@ -146,8 +154,19 @@ namespace RunningGame.Scene
             }
 
             map1.Draw(spriteBatch);
-            //******************************* *********************
-
+            //****************************Fonts********************
+            string output = "Distance:" + distance;
+            Vector2 FontOrigin = distanceFont.MeasureString(output) / 2;
+            spriteBatch.DrawString(distanceFont, output, distanceFontPostion, Color.Black,
+                0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
+            spriteBatch.DrawString(distanceFont, output, new Vector2(distanceFontPostion.X + 1, distanceFontPostion.Y + 1), Color.White,
+                0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f); //shadow
+            output = "Score:" + score;
+            FontOrigin = scoreFont.MeasureString(output) / 2;
+            spriteBatch.DrawString(scoreFont, output, scoreFontPosition, Color.Black,
+                0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
+            spriteBatch.DrawString(scoreFont, output, new Vector2(scoreFontPosition.X + 1, scoreFontPosition.Y + 1), Color.White,
+                0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
             //***************************ROLE**********************
 
             aRunner.Draw(spriteBatch);
@@ -240,6 +259,15 @@ namespace RunningGame.Scene
             map1.AddRegion('b', new Rectangle(0, 0, 32, 32));
           //  map1.AddBackground("grungysky");
             //*******************************************************************************
+
+            //********************************Sprite Font************************************
+
+            distanceFont = Game.Content.Load<SpriteFont>(@"Font\SpriteFont1");
+            distanceFontPostion = new Vector2(150, 30);
+
+            scoreFont = Game.Content.Load<SpriteFont>(@"Font\SpriteFont1");
+            scoreFontPosition = new Vector2(400, 30);
+            //********************************Sprite Font************************************
             base.LoadContent();
 
         }
@@ -318,8 +346,8 @@ namespace RunningGame.Scene
                  }
              }
              oldKeyState = newState;
-            //*****************************************************
-
+            //************************MAP UPDATE***************************
+             map1.UpdateTiles();
             //**********************ROLE*******************************
 
             aRunner.Update(gameTime);

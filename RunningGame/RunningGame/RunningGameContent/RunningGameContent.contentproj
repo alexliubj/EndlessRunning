@@ -147,6 +147,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Font\SpriteFont1.spritefont">
+      <Name>SpriteFont1</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
     <None Include="Maps\m01.txt">
       <Name>m01</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
