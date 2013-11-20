@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-
+using OggSharp;
 
 namespace RunningGame.Componets
 {
@@ -29,6 +29,7 @@ namespace RunningGame.Componets
         private bool isBgMusicOn = Program.IsBgMusicOn;
         // Global variables
         SpriteBatch spriteBatch;
+
         enum BState
         {
             HOVER,
@@ -46,7 +47,6 @@ namespace RunningGame.Componets
             SOUNDS_BUTTON_OFF_INDEX = 6,
             BUTTON_HEIGHT = 40,
             BUTTON_WIDTH = 88;
-
 
         Color background_color;
         Color[] button_color = new Color[NUMBER_OF_BUTTONS];
@@ -161,16 +161,19 @@ namespace RunningGame.Componets
                     {
                         //start the main component
                         ((Game1)gameObject).ChangeComponets(1);
+                        ((Game1)gameObject).PlayBgMusicByIndex(1);
                     }
                     break;
                 case SETTINGS_BUTTON_INDEX:
                     {
                         //start the help component
+                        ((Game1)gameObject).ChangeComponets(2);
                     }
                     break;
                 case ABOUT_BUTTON_INDEX:
                     {
                         //start the about component
+                        ((Game1)gameObject).ChangeComponets(3);
                     }
                     break;
                     
@@ -264,7 +267,6 @@ namespace RunningGame.Componets
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
             button_texture[START_BUTTON_INDEX] = 
                 Game.Content.Load<Texture2D>(@"Sprites/easy");
             button_texture[SETTINGS_BUTTON_INDEX] =
@@ -276,11 +278,12 @@ namespace RunningGame.Componets
             button_texture[BGMUSIC_BUTTON_INDEX] =
                 Game.Content.Load<Texture2D>(@"Sprites/hard");
             button_texture[SOUNDS_BUTTON_INDEX] =
-                Game.Content.Load<Texture2D>(@"Sprites/hard");
+                Game.Content.Load<Texture2D>(@"Sprites/medium");
             button_texture[BGMUSIC_BUTTON_OFF_INDEX] =
-                Game.Content.Load<Texture2D>(@"Sprites/hard");
+                Game.Content.Load<Texture2D>(@"Sprites/easy");
             button_texture[SOUNDS_BUTTON_OFF_INDEX] =
-                Game.Content.Load<Texture2D>(@"Sprites/hard");
+                Game.Content.Load<Texture2D>(@"Sprites/easy");
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -336,8 +339,8 @@ namespace RunningGame.Componets
 
             for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
             {
-                if ((i == BGMUSIC_BUTTON_INDEX && !isBgMusicOn) ||
-                    (i == SOUNDS_BUTTON_INDEX && !isSoundOn))
+                if ((i == BGMUSIC_BUTTON_INDEX && !Program.IsBgMusicOn) ||
+                    (i == SOUNDS_BUTTON_INDEX && !Program.IsSoundOn))
                     spriteBatch.Draw(button_texture[i + 2], button_rectangle[i], button_color[i]);
                 else
                     spriteBatch.Draw(button_texture[i], button_rectangle[i], button_color[i]);

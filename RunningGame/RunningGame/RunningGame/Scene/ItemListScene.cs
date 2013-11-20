@@ -17,10 +17,12 @@ namespace RunningGame.Scene
     /// </summary>
     public class ItemListScene : DrawableGameComponent
     {
+        Game gameObject;
         public ItemListScene(Game game)
             : base(game)
         {
             // TODO: Construct any child components here
+            this.gameObject = game;
         }
 
         /// <summary>

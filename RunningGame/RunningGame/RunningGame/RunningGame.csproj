@@ -77,6 +77,43 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coins\CoinsManager.cs" />
+    <Compile Include="OGGLib\AllocChain.cs" />
+    <Compile Include="OGGLib\Block.cs" />
+    <Compile Include="OGGLib\Buffer.cs" />
+    <Compile Include="OGGLib\CodeBook.cs" />
+    <Compile Include="OGGLib\Comment.cs" />
+    <Compile Include="OGGLib\csorbisException.cs" />
+    <Compile Include="OGGLib\Drft.cs" />
+    <Compile Include="OGGLib\DspState.cs" />
+    <Compile Include="OGGLib\EncodeAuxNearestMatch.cs" />
+    <Compile Include="OGGLib\EncodeAuxThreshMatch.cs" />
+    <Compile Include="OGGLib\Floor0.cs" />
+    <Compile Include="OGGLib\Floor1.cs" />
+    <Compile Include="OGGLib\FuncFloor.cs" />
+    <Compile Include="OGGLib\FuncMapping.cs" />
+    <Compile Include="OGGLib\FuncResidue.cs" />
+    <Compile Include="OGGLib\FuncTime.cs" />
+    <Compile Include="OGGLib\Info.cs" />
+    <Compile Include="OGGLib\InfoMode.cs" />
+    <Compile Include="OGGLib\Lookup.cs" />
+    <Compile Include="OGGLib\Lpc.cs" />
+    <Compile Include="OGGLib\Lsp.cs" />
+    <Compile Include="OGGLib\Mapping0.cs" />
+    <Compile Include="OGGLib\Mdct.cs" />
+    <Compile Include="OGGLib\OggDecoder.cs" />
+    <Compile Include="OGGLib\Packet.cs" />
+    <Compile Include="OGGLib\Page.cs" />
+    <Compile Include="OGGLib\PsyInfo.cs" />
+    <Compile Include="OGGLib\PsyLook.cs" />
+    <Compile Include="OGGLib\Residue0.cs" />
+    <Compile Include="OGGLib\Residue1.cs" />
+    <Compile Include="OGGLib\Residue2.cs" />
+    <Compile Include="OGGLib\StaticCodeBook.cs" />
+    <Compile Include="OGGLib\StreamState.cs" />
+    <Compile Include="OGGLib\SyncState.cs" />
+    <Compile Include="OGGLib\Time0.cs" />
+    <Compile Include="OGGLib\VorbisFile.cs" />
+    <Compile Include="OggSong.cs" />
     <Compile Include="Scene\HelpScene.cs" />
     <Compile Include="Scene\MainScene.cs" />
     <Compile Include="DataEnv\DataEnv.cs" />
@@ -180,6 +217,17 @@
     <Content Include="Config\spring_p2.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="r_bgm_01.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="r_bgm_02.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="u_bgm.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />

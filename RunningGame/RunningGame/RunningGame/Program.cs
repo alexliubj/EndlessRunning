@@ -16,7 +16,8 @@ namespace RunningGame
             }
         }
 
-        private static bool isSoundOn;
+        private static bool isSoundOn = true;
+        private static bool currentGameStatus = true;
 
         public static bool IsSoundOn
         {
@@ -24,7 +25,7 @@ namespace RunningGame
             set { Program.isSoundOn = value; }
         }
 
-        private static bool isBgMusicOn;
+        private static bool isBgMusicOn = true;
 
         public static bool IsBgMusicOn
         {
@@ -40,6 +41,12 @@ namespace RunningGame
         public static float firstJumpHeight
         {
             get { return 280; }
+        }
+
+        public static bool GameStatus
+        {
+            get { return currentGameStatus; }
+            set { currentGameStatus = value; }
         }
 
     }

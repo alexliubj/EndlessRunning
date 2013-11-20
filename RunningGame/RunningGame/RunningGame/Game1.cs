@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Media;
 using RunningGame.Utils;
 using RunningGame.Scene;
 using RunningGame.Componets;
+using OggSharp;
 
 namespace RunningGame
 {
@@ -25,6 +26,16 @@ namespace RunningGame
         DrawableGameComponent mainGame;
         DrawableGameComponent helpComp;
         DrawableGameComponent aboutComp;
+        OggSong bgsong1;
+        OggSong bgsong2;
+        OggSong bgsong3;
+        OggSong currentBgSong;
+
+        OggSong coinMusic;
+        OggSong buttonClick;
+        OggSong jump;
+        OggSong secondJump;
+        OggSong die;
 
         enum MenuIndexs
         { 
@@ -33,6 +44,49 @@ namespace RunningGame
             HelpIndex = 2, 
             AboutIndex = 3, 
         };
+
+        public enum SoundInstance
+        {
+            CoinMusic = 0,
+            buttonClick = 1,
+            jump,
+            secondjump,
+            die
+        };
+
+        public void PlaySoundInstance(SoundInstance si)
+        {
+            switch (si)
+            {
+                case SoundInstance.CoinMusic:
+                    {
+                        coinMusic.Play();
+                    }
+                    break;
+                case SoundInstance.buttonClick:
+                    {
+                        buttonClick.Play();
+                    }
+                    break;
+                case SoundInstance.jump:
+                    {
+                        jump.Play();
+                    }
+                    break;
+                case SoundInstance.secondjump:
+                    {
+                        secondJump.Play();
+                    }
+                    break;
+                case SoundInstance.die:
+                    {
+                        die.Play();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
 
         public Game1()
         {
@@ -161,7 +215,58 @@ namespace RunningGame
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+
+            bgsong3 = new OggSong(TitleContainer.OpenStream("r_bgm_01.ogg"), false);
+            bgsong2 = new OggSong(TitleContainer.OpenStream("r_bgm_02.ogg"), false);
+            bgsong1 = new OggSong(TitleContainer.OpenStream("u_bgm.ogg"), false);
+            coinMusic = new OggSong(TitleContainer.OpenStream("u_bgm.ogg"), false);
+            buttonClick = new OggSong(TitleContainer.OpenStream("u_bgm.ogg"), false);
+            jump = new OggSong(TitleContainer.OpenStream("u_bgm.ogg"), false);
+            secondJump = new OggSong(TitleContainer.OpenStream("u_bgm.ogg"), false);
+            die = new OggSong(TitleContainer.OpenStream("u_bgm.ogg"), false);
+
+            bgsong1.Repeat = true;
+            bgsong2.Repeat = true;
+            bgsong3.Repeat = true;
+            currentBgSong = bgsong1;
+            
+
+            bgsong1.Play();
+
             // TODO: use this.Content to load your game content here
+        }
+
+        public void PauseAndResumeSound(int status)
+        {
+            if (status == 0) // playing
+                currentBgSong.Pause();
+            else
+                currentBgSong.Resume();
+        }
+
+        public void PlayBgMusicByIndex(int index)
+        {
+            switch(index)
+            {
+                case 0:
+                    currentBgSong.Stop();
+                    currentBgSong = bgsong1;
+                    currentBgSong.Play();
+                   break;
+                case 1:
+                    currentBgSong.Stop();
+                    currentBgSong = bgsong2;
+                    currentBgSong.Play();
+                    
+                   break;
+                case 2:
+                    currentBgSong.Stop();
+                    currentBgSong = bgsong3;
+                    currentBgSong.Play();
+                   break;
+                default:
+                    break;
+            }
         }
 
         /// <summary>
