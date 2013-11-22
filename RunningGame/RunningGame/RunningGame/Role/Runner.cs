@@ -25,8 +25,8 @@ namespace RunningGame.Role
         private bool isMovingUp = true;
         bool secondIsMovingUp = true;
         bool isSecondMovingUp = true;
-        Vector2 jumpSpeed = new Vector2(0, -2.5f);
-        Vector2 downSpeed = new Vector2(0, -2.9f);
+        Vector2 jumpSpeed = new Vector2(0, -3.0f);
+        Vector2 downSpeed = new Vector2(0, -3.6f);
         public RoleStatus status = RoleStatus.running;
         private float theHeightJump;
         private Vector2 firstJumpMax;

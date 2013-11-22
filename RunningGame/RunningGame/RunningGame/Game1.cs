@@ -36,7 +36,8 @@ namespace RunningGame
         OggSong jump;
         OggSong secondJump;
         OggSong die;
-
+        Random aRandom = new Random(100);
+        string[] getStar = new string[] { "r_get_star_01.ogg", "r_get_star_02.ogg", "r_get_star_03.ogg", "r_get_star_04.ogg", "r_get_star_05.ogg", "r_get_star_06.ogg" };
         enum MenuIndexs
         { 
             MenuIndex = 0,
@@ -219,11 +220,12 @@ namespace RunningGame
             bgsong3 = new OggSong(TitleContainer.OpenStream("r_bgm_01.ogg"), false);
             bgsong2 = new OggSong(TitleContainer.OpenStream("r_bgm_02.ogg"), false);
             bgsong1 = new OggSong(TitleContainer.OpenStream("u_bgm.ogg"), false);
-            coinMusic = new OggSong(TitleContainer.OpenStream("u_bgm.ogg"), false);
-            buttonClick = new OggSong(TitleContainer.OpenStream("u_bgm.ogg"), false);
-            jump = new OggSong(TitleContainer.OpenStream("u_bgm.ogg"), false);
-            secondJump = new OggSong(TitleContainer.OpenStream("u_bgm.ogg"), false);
-            die = new OggSong(TitleContainer.OpenStream("u_bgm.ogg"), false);
+
+            coinMusic = new OggSong(TitleContainer.OpenStream(getStar[aRandom.Next(5)]), false);
+            buttonClick = new OggSong(TitleContainer.OpenStream("u_btn_click.ogg"), false);
+            jump = new OggSong(TitleContainer.OpenStream("r_jump.ogg"), false);
+            secondJump = new OggSong(TitleContainer.OpenStream("r_second_jump_boy.ogg"), false);
+            die = new OggSong(TitleContainer.OpenStream("r_ch_die.ogg"), false);
 
             bgsong1.Repeat = true;
             bgsong2.Repeat = true;

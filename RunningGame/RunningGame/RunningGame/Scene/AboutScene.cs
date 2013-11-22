@@ -229,7 +229,7 @@ namespace RunningGame.Scene
 
             for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
             {
-                    spriteBatch.Draw(button_texture[i], button_rectangle[i], button_color[i]);
+                spriteBatch.Draw(button_texture[i], button_rectangle[i], button_color[i]);
             }
             spriteBatch.End();
             base.Draw(gameTime);

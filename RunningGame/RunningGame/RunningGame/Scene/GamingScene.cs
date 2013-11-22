@@ -11,8 +11,10 @@ using Microsoft.Xna.Framework.Media;
 using RunningGame.Utils;
 using RunningGame.Model;
 using RunningGame.Role;
-using RunningGame.Map;
+using RunningGame.Coins;
 using System.IO;
+using RunningGame.Maps;
+using RunningGame.Coins;
 
 namespace RunningGame.Scene
 {
@@ -48,7 +50,8 @@ namespace RunningGame.Scene
         Texture2D spring2;
         Texture2D alaways;
         Runner aRunner;
-        MapManager map1;
+        CoinsManager map1;
+        MapManager mainMap;
 
         XMLParseUtils aTestParse = new XMLParseUtils();
         TextureObject springbgObj1;
@@ -77,7 +80,7 @@ namespace RunningGame.Scene
         Rectangle frontbgSourceRect3 = new Rectangle();
         int bgFrontWidth1, bgFrontWidth2, bgFrontWidth3;
         //**********************************Road*************************************
-        float roadSpeed = -0.6f;
+        float roadSpeed = -1.6f;
         float offsetRoadY1 = 0, offsetRoadY2 = 0;
         float roadMidOffset1, roadLeftOffset =400, roadMidOffset2 = 450, roadMidOffset3 = 400, roadRightOffset, roadSlabOffset;
         Vector2 roadLefPos = new Vector2();
@@ -92,6 +95,7 @@ namespace RunningGame.Scene
         Rectangle roadRightRect = new Rectangle();
         Rectangle roadLeftRect = new Rectangle();
         Rectangle roadSlabRect = new Rectangle();
+        Random gapBetween = new Random(1000);
 
         int roadLeftWidth, roadRightWidth, roadMidWidth1, roadMidWidth2, roadMidWidth3, roadSlabWidth;
         //*************************************************************************
@@ -333,14 +337,14 @@ namespace RunningGame.Scene
                 while (currentLeft1 < screenWidth)
                 {
                     spriteBatch.Draw(springbg1, new Vector2(currentLeft1, offsetY1), Color.White);
-                    currentLeft1 += bgWidth1;
+                    currentLeft1 += bgWidth1 - 2;
                 }
 
                 float currentLeft5 = position5.X;
                 while (currentLeft5 < screenWidth)
                 {
                     spriteBatch.Draw(springbg5, new Vector2(currentLeft5, offsetY5), Color.White);
-                    currentLeft5 += bgWidth2;
+                    currentLeft5 += bgWidth2 - 2;
                 }
 
 
@@ -350,7 +354,7 @@ namespace RunningGame.Scene
                 while (currentLeftfront < screenWidth)
                 {
                     spriteBatch.Draw(spring1, new Vector2(currentLeftfront, offsetFrontbgY1), frontbgSourceRect1, Color.White);
-                    currentLeftfront += bgFrontWidth1;
+                    currentLeftfront += bgFrontWidth1 -2;
                 }
 
                 //**********************************road sprites*******************
@@ -359,24 +363,25 @@ namespace RunningGame.Scene
                 float currentmid1 = roadMidPos1.X;
                 while (currentmid1 < screenWidth)
                 {
-                    spriteBatch.Draw(spring1, new Vector2(currentmid1, roadMidOffset1), roadMidRect1, Color.White);
+                  //  spriteBatch.Draw(spring1, new Vector2(currentmid1, roadMidOffset1), roadMidRect1, Color.White);
                     currentmid1 += roadMidWidth1;
                 }
 
                 float currentmid2 = roadMidPos2.X;
                 while (currentmid2 < screenWidth)
                 {
-                    spriteBatch.Draw(spring2, new Vector2(currentmid2, roadMidOffset2), roadMidRect2, Color.White);
+                  //  spriteBatch.Draw(spring2, new Vector2(currentmid2, roadMidOffset2), roadMidRect2, Color.White);
                     currentmid2 += roadMidWidth2;
                 }
 
                 float currentmid3 = roadMidPos3.X;
+                int gap = gapBetween.Next(50, 100);
                 while (currentmid3 < screenWidth)
                 {
-                    spriteBatch.Draw(spring1, new Vector2(currentmid3, roadMidOffset3), roadMidRect3, Color.White);
-                    currentmid3 += roadMidWidth3;
+                    spriteBatch.Draw(spring1, new Vector2(currentmid3, roadMidOffset3), roadSlabRect, Color.White);
+                    currentmid3 += roadMidWidth3 + gap;
                 }
-
+                mainMap.Draw(spriteBatch);
                 map1.Draw(spriteBatch);
                 //****************************Fonts********************
                 string output = "Distance:" + distance;
@@ -481,9 +486,16 @@ namespace RunningGame.Scene
             aRunner.status = Runner.RoleStatus.running;
 
             //********************************Load coins*************************************
-            map1 = new MapManager(Game.Content, Path.Combine(Game.Content.RootDirectory, @"Maps\m01.txt"), @"Sprites\coin_single", new Vector2(32, 32), '-');
+            map1 = new CoinsManager(Game.Content, Path.Combine(Game.Content.RootDirectory, @"Maps\m01.txt"), @"Sprites\coin_single", new Vector2(32, 32), '-');
             map1.AddRegion('a', new Rectangle(0, 0, 32, 32));
             map1.AddRegion('b', new Rectangle(0, 0, 32, 32));
+
+            Dictionary<char, Vector2> dimensions = new Dictionary<char, Vector2>();
+            dimensions['a'] = new Vector2(roadMidRect1.Width, roadMidRect1.Height);
+            dimensions['b'] = new Vector2(roadSlabRect.Width, roadSlabRect.Height);
+            mainMap = new MapManager(Game.Content, Path.Combine(Game.Content.RootDirectory, @"Maps\m02.txt"), @"Sprites\spring_p1", dimensions, '-');
+            mainMap.AddRegion('a', roadMidRect1);
+            mainMap.AddRegion('b', roadSlabRect);
           //  map1.AddBackground("grungysky");
             //*******************************************************************************
 
@@ -570,9 +582,15 @@ namespace RunningGame.Scene
                     if (!oldKeyState.IsKeyDown(Keys.Space))
                     {
                         if (aRunner.status == Runner.RoleStatus.running)
+                        {
                             aRunner.status = Runner.RoleStatus.jumping;
+                            ((Game1)gameObject).PlaySoundInstance(RunningGame.Game1.SoundInstance.jump);
+                        }
                         else if (aRunner.status == Runner.RoleStatus.jumping)
+                        {
                             aRunner.setSecondJumpStatus();
+                            ((Game1)gameObject).PlaySoundInstance(RunningGame.Game1.SoundInstance.secondjump);
+                        }
                         else
                         { }
                     }
@@ -580,16 +598,35 @@ namespace RunningGame.Scene
                 oldKeyState = newState;
                 //************************MAP UPDATE***************************
                 map1.UpdateTiles();
+                mainMap.UpdateTiles();
                 //**********************ROLE*******************************
 
                 aRunner.Update(gameTime);
-
+                CheckGetCoins();
                 //**********************ROLE*******************************
 
             }
 
             update_button(gameTime);
             base.Update(gameTime);
+        }
+
+
+        public void CheckGetCoins()
+        {
+            foreach (RunningGame.Coins.Titles t in map1.listTiles)
+            {
+                if (t.isAlive)
+                {
+                    Rectangle tRect = new Rectangle((int)t.positonTiles.X, (int)t.positonTiles.Y, 32, 32);
+                    if (aRunner.CurrentRectangle().Intersects(tRect))
+                    {
+                        t.isAlive = false;
+                        ((Game1)gameObject).PlaySoundInstance(RunningGame.Game1.SoundInstance.CoinMusic);
+                        score += 10;
+                    }
+                }
+            }
         }
     }
 }

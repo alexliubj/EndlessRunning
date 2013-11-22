@@ -107,11 +107,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sprites\cover_p2.png">
+    <None Include="Maps\m02.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>m02</Name>
+    </None>
+    <Content Include="Sprites\cover_p2.png">
       <Name>cover_p2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-    </Compile>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Sprites\cover_p1.png">

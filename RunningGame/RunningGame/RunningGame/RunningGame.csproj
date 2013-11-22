@@ -76,7 +76,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coins\CoinsManager.cs" />
+    <Compile Include="Coins\MapsManager.cs" />
     <Compile Include="OGGLib\AllocChain.cs" />
     <Compile Include="OGGLib\Block.cs" />
     <Compile Include="OGGLib\Buffer.cs" />
@@ -117,7 +117,7 @@
     <Compile Include="Scene\HelpScene.cs" />
     <Compile Include="Scene\MainScene.cs" />
     <Compile Include="DataEnv\DataEnv.cs" />
-    <Compile Include="Map\MapManager.cs" />
+    <Compile Include="CoinsManager\CoinsManager.cs" />
     <Compile Include="Model\FrameObjects.cs" />
     <Compile Include="Model\TextureObject.cs" />
     <Compile Include="Prefrence\UserPreference.cs" />
@@ -225,7 +225,40 @@
     <None Include="r_bgm_02.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="r_ch_die.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="r_game_over.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="r_get_star_01.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="r_get_star_02.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="r_get_star_03.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="r_get_star_04.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="r_get_star_05.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="r_get_star_06.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="r_jump.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="r_second_jump_boy.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="u_bgm.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="u_btn_click.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
