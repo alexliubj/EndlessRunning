@@ -235,6 +235,7 @@ namespace RunningGame.Scene
         // Logic for each button click goes here
         void take_action_on_button(int i)
         {
+            ((Game1)gameObject).PlaySoundInstance(RunningGame.Game1.SoundInstance.buttonClick);
             //take action corresponding to which button was clicked
             switch (i)
             {
@@ -248,6 +249,7 @@ namespace RunningGame.Scene
                     {
                         //start the main component
                         ((Game1)gameObject).ChangeComponets(0);
+                        ((Game1)gameObject).PlayBgMusicByIndex(0);
                     }
 
                     break;

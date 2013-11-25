@@ -148,6 +148,7 @@ namespace RunningGame.Scene
         // Logic for each button click goes here
         void take_action_on_button(int i)
         {
+            ((Game1)gameObject).PlaySoundInstance(RunningGame.Game1.SoundInstance.buttonClick);
             //take action corresponding to which button was clicked
             switch (i)
             {
