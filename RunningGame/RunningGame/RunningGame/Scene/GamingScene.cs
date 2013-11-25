@@ -353,7 +353,7 @@ namespace RunningGame.Scene
             elapsedTime += gameTime.ElapsedGameTime.TotalMilliseconds;
             if(Program.GameStatus)
             distance = (int)gameTime.TotalGameTime.TotalMilliseconds / 100;
-            if (distance < 500)
+            if (distance < 450)
                 level = 1;
             else if (distance < 800)
             {
@@ -858,7 +858,7 @@ namespace RunningGame.Scene
                     if (aRunner.CurrentRectangle().Intersects(tRect))
                     {
                         t.isAlive = false;
-                        aManage.FireBullet(new Vector2(1200, 340));
+                        aManage.FireBullet(new Vector2(1200, gapBetween.Next(350,370)));
                     }
                 }
                 else if (t.isAlive && t.tileValue == 'e') //tool3
