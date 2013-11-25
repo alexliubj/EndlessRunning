@@ -11,7 +11,6 @@ using Microsoft.Xna.Framework.Media;
 using RunningGame.Utils;
 using RunningGame.Model;
 using RunningGame.Role;
-using RunningGame.Coins;
 using System.IO;
 using RunningGame.Maps;
 using RunningGame.Coins;
@@ -37,8 +36,11 @@ namespace RunningGame.Scene
         Vector2 distanceFontPostion;
         int score = 0;
         int distance = 0;
+        int level = 1;
         SpriteFont scoreFont;
         Vector2 scoreFontPosition;
+        SpriteFont levelFont;
+        Vector2 levelFontPosition;
         //**************SPRITEFONT*************
         SpriteBatch spriteBatch;
         Texture2D springbg1;
@@ -96,6 +98,14 @@ namespace RunningGame.Scene
         Rectangle roadLeftRect = new Rectangle();
         Rectangle roadSlabRect = new Rectangle();
         Random gapBetween = new Random(1000);
+
+        Rectangle cloudRect = new Rectangle();
+        Rectangle cloudRect2 = new Rectangle();
+        Rectangle cloudRect3 = new Rectangle();
+        Vector2 cloudPosition1 = new Vector2();
+        Vector2 cloudPosition2 = new Vector2();
+        Vector2 cloudPosition3 = new Vector2();
+        Vector2[] cloudVelo = new Vector2[] { new Vector2(-1.7f, 0), new Vector2(-1.4f, 0), new Vector2(-1.8f, 0), new Vector2(-2.4f, 0) };
 
         int roadLeftWidth, roadRightWidth, roadMidWidth1, roadMidWidth2, roadMidWidth3, roadSlabWidth;
         //*************************************************************************
@@ -251,9 +261,9 @@ namespace RunningGame.Scene
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             button_texture[PAUSEBUTTON_INDEX] =
-                Game.Content.Load<Texture2D>(@"Sprites/easy");
+                Game.Content.Load<Texture2D>(@"Sprites/pause");
             button_texture[BACK_BUTTON_INDEX] =
-                Game.Content.Load<Texture2D>(@"Sprites/medium");
+                Game.Content.Load<Texture2D>(@"Sprites/back");
            
         }
         void initialize_buttons()
@@ -265,6 +275,10 @@ namespace RunningGame.Scene
                 button_state[i] = BState.UP;
                 button_color[i] = Color.White;
                 button_timer[i] = 0.0;
+                if(i==0)
+                    button_rectangle[i] = new Rectangle(x, y, 44, BUTTON_HEIGHT);
+                else
+
                 button_rectangle[i] = new Rectangle(x, y, BUTTON_WIDTH, BUTTON_HEIGHT);
                 x += BUTTON_WIDTH;
             }
@@ -330,6 +344,7 @@ namespace RunningGame.Scene
             //start beyond left of screen and keep drawing until 
             //the right is beyond the right of the screen
 
+            
 
                 distance = (int)gameTime.TotalGameTime.Seconds * 100;
                 //*****************************************************
@@ -378,9 +393,15 @@ namespace RunningGame.Scene
                 int gap = gapBetween.Next(50, 100);
                 while (currentmid3 < screenWidth)
                 {
-                    spriteBatch.Draw(spring1, new Vector2(currentmid3, roadMidOffset3), roadSlabRect, Color.White);
+                    //spriteBatch.Draw(spring1, new Vector2(currentmid3, roadMidOffset3), roadSlabRect, Color.White);
                     currentmid3 += roadMidWidth3 + gap;
                 }
+
+
+                spriteBatch.Draw(spring2, cloudPosition1, cloudRect, Color.White);
+                spriteBatch.Draw(spring2, cloudPosition2, cloudRect2, Color.White);
+                spriteBatch.Draw(spring2, cloudPosition3, cloudRect3, Color.White);
+
                 mainMap.Draw(spriteBatch);
                 map1.Draw(spriteBatch);
                 //****************************Fonts********************
@@ -390,17 +411,27 @@ namespace RunningGame.Scene
                     0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
                 spriteBatch.DrawString(distanceFont, output, new Vector2(distanceFontPostion.X + 1, distanceFontPostion.Y + 1), Color.White,
                     0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f); //shadow
+
                 output = "Score:" + score;
                 FontOrigin = scoreFont.MeasureString(output) / 2;
                 spriteBatch.DrawString(scoreFont, output, scoreFontPosition, Color.Black,
                     0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
                 spriteBatch.DrawString(scoreFont, output, new Vector2(scoreFontPosition.X + 1, scoreFontPosition.Y + 1), Color.White,
                     0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
+
+                output = "Level:" + level;
+                FontOrigin = levelFont.MeasureString(output) / 2;
+                spriteBatch.DrawString(levelFont, output, levelFontPosition, Color.Black,
+                    0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
+                spriteBatch.DrawString(levelFont, output, new Vector2(levelFontPosition.X + 1, scoreFontPosition.Y + 1), Color.White,
+                    0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
                 //***************************ROLE**********************
 
                 aRunner.Draw(spriteBatch);
 
                 //***************************ROLE**********************
+
+             
 
                 draw_buttons();
             
@@ -443,7 +474,14 @@ namespace RunningGame.Scene
             rectangleObj = springbgObj1.getFrameObjectByName(@"spring_bg3_3.png");
             frontbgSourceRect3 = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
             bgFrontWidth3  = rectangleObj.Width;
+            //**************************************cloud**********************
 
+            rectangleObj = springbgObj2.getFrameObjectByName(@"spring_cloud1.png");
+            cloudRect = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
+            rectangleObj = springbgObj2.getFrameObjectByName(@"spring_cloud2.png");
+            cloudRect2 = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
+            rectangleObj = springbgObj2.getFrameObjectByName(@"spring_cloud3.png");
+            cloudRect3 = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
             //**************************************road****************************
 
             rectangleObj = springbgObj1.getFrameObjectByName(@"spring_road_left.png");
@@ -489,14 +527,52 @@ namespace RunningGame.Scene
             map1 = new CoinsManager(Game.Content, Path.Combine(Game.Content.RootDirectory, @"Maps\m01.txt"), @"Sprites\coin_single", new Vector2(32, 32), '-');
             map1.AddRegion('a', new Rectangle(0, 0, 32, 32));
             map1.AddRegion('b', new Rectangle(0, 0, 32, 32));
+            //********************************Load Map*************************************
+            rectangleObj = springbgObj1.getFrameObjectByName(@"spring_tree3.png");
+            Rectangle treeRect = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
+            rectangleObj = springbgObj1.getFrameObjectByName(@"spring_house1.png");
+            Rectangle houseRect1 = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
+            rectangleObj = springbgObj1.getFrameObjectByName(@"spring_house2.png");
+            Rectangle houseRect = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
+            rectangleObj = springbgObj1.getFrameObjectByName(@"spring_road_flower.png");
+            Rectangle flowerRect = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
+            rectangleObj = springbgObj1.getFrameObjectByName(@"spring_cat1_1.png");
+            Rectangle catRect = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
+            rectangleObj = springbgObj1.getFrameObjectByName(@"spring_dog.png");
+            Rectangle dogRect = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
+            rectangleObj = springbgObj1.getFrameObjectByName(@"spring_doghouse.png");
+            Rectangle doghouseRect = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
 
             Dictionary<char, Vector2> dimensions = new Dictionary<char, Vector2>();
             dimensions['a'] = new Vector2(roadMidRect1.Width, roadMidRect1.Height);
             dimensions['b'] = new Vector2(roadSlabRect.Width, roadSlabRect.Height);
+            dimensions['c'] = new Vector2(roadMidRect2.Width, roadMidRect2.Height);
+            dimensions['d'] = new Vector2(roadMidRect3.Width, roadMidRect3.Height);
+            dimensions['e'] = new Vector2(roadLeftRect.Width, roadLeftRect.Height);
+            dimensions['f'] = new Vector2(roadRightRect.Width, roadRightRect.Height);
+            dimensions['g'] = new Vector2(treeRect.Width, treeRect.Height);
+            dimensions['h'] = new Vector2(houseRect1.Width, houseRect1.Height);
+            dimensions['i'] = new Vector2(houseRect.Width, houseRect.Height);
+            dimensions['j'] = new Vector2(flowerRect.Width, flowerRect.Height);
+            dimensions['k'] = new Vector2(catRect.Width, catRect.Height);
+            dimensions['l'] = new Vector2(dogRect.Width, dogRect.Height);
+            dimensions['m'] = new Vector2(doghouseRect.Width, doghouseRect.Height);
             mainMap = new MapManager(Game.Content, Path.Combine(Game.Content.RootDirectory, @"Maps\m02.txt"), @"Sprites\spring_p1", dimensions, '-');
             mainMap.AddRegion('a', roadMidRect1);
             mainMap.AddRegion('b', roadSlabRect);
-          //  map1.AddBackground("grungysky");
+            mainMap.AddRegion('c', roadMidRect2);
+            mainMap.AddRegion('d', roadMidRect3);
+            mainMap.AddRegion('e', roadLeftRect);
+            mainMap.AddRegion('f', roadRightRect);
+
+            mainMap.AddRegion('g', treeRect);
+            mainMap.AddRegion('h', houseRect1);
+            mainMap.AddRegion('i', houseRect);
+            mainMap.AddRegion('j', flowerRect);
+            mainMap.AddRegion('k', catRect);
+            mainMap.AddRegion('l', dogRect);
+            mainMap.AddRegion('m', doghouseRect);
+          
             //*******************************************************************************
 
             //********************************Sprite Font************************************
@@ -506,6 +582,10 @@ namespace RunningGame.Scene
 
             scoreFont = Game.Content.Load<SpriteFont>(@"Font\SpriteFont1");
             scoreFontPosition = new Vector2(400, 30);
+
+            levelFont = Game.Content.Load<SpriteFont>(@"Font\SpriteFont1");
+            levelFontPosition = new Vector2(650, 30);
+
             //********************************Sprite Font************************************
 
             load_button_content();
@@ -523,6 +603,12 @@ namespace RunningGame.Scene
         {
             // TODO: Add your initialization code here
             initialize_buttons();
+
+            Vector2 cloudPosition1 = new Vector2(Game.GraphicsDevice.Viewport.Bounds.Width + gapBetween.Next(200), gapBetween.Next(100, Game.GraphicsDevice.Viewport.Bounds.Height/2));
+            Vector2 cloudPosition2 = cloudPosition1;
+            Vector2 cloudPosition3 = cloudPosition1;
+
+
             base.Initialize();
         }
 
@@ -533,6 +619,23 @@ namespace RunningGame.Scene
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
+
+
+            cloudPosition1 += cloudVelo[gapBetween.Next(0, 3)];
+            cloudPosition2 += cloudVelo[gapBetween.Next(0, 3)];
+             cloudPosition3 += cloudVelo[gapBetween.Next(0,3)];
+
+            if(cloudPosition1.X <=100)
+                cloudPosition1 = new Vector2(Game.GraphicsDevice.Viewport.Bounds.Width + gapBetween.Next(200), 
+                    gapBetween.Next(100, Game.GraphicsDevice.Viewport.Bounds.Height/2));
+
+            if (cloudPosition2.X <= 100)
+                cloudPosition2 = new Vector2(Game.GraphicsDevice.Viewport.Bounds.Width + gapBetween.Next(200), 
+                    gapBetween.Next(100, Game.GraphicsDevice.Viewport.Bounds.Height/2));
+
+            if (cloudPosition3.X <= 100)
+                cloudPosition3 = new Vector2(Game.GraphicsDevice.Viewport.Bounds.Width + gapBetween.Next(200), 
+                    gapBetween.Next(100, Game.GraphicsDevice.Viewport.Bounds.Height/2));
 
             if (Program.GameStatus)
             {
@@ -602,7 +705,7 @@ namespace RunningGame.Scene
                 //**********************ROLE*******************************
 
                 aRunner.Update(gameTime);
-                CheckGetCoins();
+                CheckCollisionWithDetection();
                 //**********************ROLE*******************************
 
             }
@@ -612,11 +715,11 @@ namespace RunningGame.Scene
         }
 
 
-        public void CheckGetCoins()
+        public void CheckCollisionWithDetection()
         {
             foreach (RunningGame.Coins.Titles t in map1.listTiles)
             {
-                if (t.isAlive)
+                if (t.isAlive && t.tileValue=='a') //coins
                 {
                     Rectangle tRect = new Rectangle((int)t.positonTiles.X, (int)t.positonTiles.Y, 32, 32);
                     if (aRunner.CurrentRectangle().Intersects(tRect))
@@ -626,7 +729,20 @@ namespace RunningGame.Scene
                         score += 10;
                     }
                 }
+                else if (t.isAlive && t.tileValue == 'b') // monster
+                {
+                }
+                else if (t.isAlive && t.tileValue == 'c') //tool1
+                { }
+                else if (t.isAlive && t.tileValue == 'd') //tool2
+                { }
+                else if (t.isAlive && t.tileValue == 'e') //tool3
+                { }
+                else
+                { }
             }
         }
+
+        
     }
 }

@@ -131,6 +131,7 @@
     <Compile Include="Scene\AboutScene.cs" />
     <Compile Include="Scene\GamingScene.cs" />
     <Compile Include="Scene\ItemListScene.cs" />
+    <Compile Include="Scene\StartScene.cs" />
     <Compile Include="Utils\XMLParseUtils.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +220,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="r_comic.ogg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="r_bgm_01.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

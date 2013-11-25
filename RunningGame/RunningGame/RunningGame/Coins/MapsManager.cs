@@ -28,7 +28,7 @@ namespace RunningGame.Maps
          ContentManager content;
         string filename;
         public List<Titles> listTiles = new List<Titles>();
-        public Vector2 deltaSpeed = new Vector2(-1.5f, 0);
+        public Vector2 deltaSpeed = new Vector2(-2.5f, 0);
         Dictionary<char, Vector2> tileDimensions;
         public Dictionary<char, Vector2> TileDimensions
         {
@@ -94,7 +94,7 @@ namespace RunningGame.Maps
             }
 
             //tiles = new char[width, height];
-            int startY = 220;
+            int startY = 275;
             for (int j = 0; j < height; j++)
             {
                 int startX = 0;
@@ -112,17 +112,17 @@ namespace RunningGame.Maps
                     if (c == emptyTile)
                     {
                         atile.isAlive = false;
-                        startX += 50;
-                        startY += 30;
+                        startX += 30;
                     }
                     else
                     {
-                        atile.positonTiles = new Vector2(tileDimensions[c].X + startX,
-                        220);
-                        startX += (int)tileDimensions[c].X - 2;
+                        atile.positonTiles = new Vector2(startX,
+                        startY);
+                        startX += (int)tileDimensions[c].X - 1;
                     }
                     listTiles.Add(atile);
                 }
+                startY += 33;
             }
 
             mapDimensions = new Vector2(width, height);

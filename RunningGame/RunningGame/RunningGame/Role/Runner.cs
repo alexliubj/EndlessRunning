@@ -19,6 +19,7 @@ namespace RunningGame.Role
         private Vector2[] runVector;
         const double FRAME_DELAY = 50.2;
         double elapsedTime;
+        double countTime;
         bool playedOverOnce;
         double firstHight;
         double secondHight;
@@ -31,7 +32,8 @@ namespace RunningGame.Role
         private float theHeightJump;
         private Vector2 firstJumpMax;
         private Vector2 SecontJumpMax;
-
+        private float scale = 1.0f;
+        private bool isScaling = false;
         public enum RoleStatus { 
             running =0,
             jumping = 1,
@@ -39,6 +41,21 @@ namespace RunningGame.Role
             downMoving = 3,
         }
 
+        public bool IsScaling
+        {
+            get
+            {
+                return isScaling;
+            }
+            set
+            {
+                isScaling = value;
+                if (isScaling)
+                    scale = 1.2f;
+                else
+                    scale = 1.0f;
+            }
+        }
         public Rectangle CurrentRectangle()
         {
             if (status == RoleStatus.running)
@@ -60,6 +77,7 @@ namespace RunningGame.Role
             status = RoleStatus.secondJumping;
             theHeightJump = roleJum.position.Y - Program.jumpHeight;
             secondIsMovingUp = true;
+            
         }
         public Runner(Texture2D text, Rectangle[] runRect, Rectangle jumpRectangle)
         {
@@ -116,14 +134,27 @@ namespace RunningGame.Role
                 foreach (var r in roleRun)
                 {
                     if (r.ISRunning)
-                        sb.Draw(roleTexture, r.position, runAnimations[r.roleIndex], Color.White);
+                    {
+                        if (isScaling)
+                            sb.Draw(roleTexture, r.position, runAnimations[r.roleIndex], Color.White, 0.0f, new Vector2(), scale, SpriteEffects.None, 0.0f);
+                        else
+                            sb.Draw(roleTexture, r.position, runAnimations[r.roleIndex], Color.White);
+                    }
+                    
                 }
             }
             else if (status == RoleStatus.jumping)
             {
                if(roleJum.isJumping)
                {
-                   sb.Draw(roleTexture, roleJum.position, jumpRect, Color.White);
+                   if (isScaling)
+                   {
+                       sb.Draw(roleTexture, roleJum.position, jumpRect, Color.White, 0.0f, new Vector2(), scale, SpriteEffects.None, 0.0f);
+                   }
+                   else
+                   {
+                       sb.Draw(roleTexture, roleJum.position, jumpRect, Color.White);
+                   }
                 }
             }
             else if (status == RoleStatus.downMoving)
@@ -133,13 +164,29 @@ namespace RunningGame.Role
             {
                 if (roleJum.isJumping)
                 {
-                    sb.Draw(roleTexture, roleJum.position, jumpRect, Color.White);
+                    if (isScaling)
+                    {
+                        sb.Draw(roleTexture, roleJum.position, jumpRect, Color.White, 0.0f, new Vector2(), scale, SpriteEffects.None, 0.0f);
+                    }
+                    else
+                    {
+                        sb.Draw(roleTexture, roleJum.position, jumpRect, Color.White);
+                    }
                 }
             }
         }
         public void Update(GameTime gt)
         {
             elapsedTime += gt.ElapsedGameTime.TotalMilliseconds;
+            if (isScaling)
+                countTime += gt.ElapsedGameTime.TotalMilliseconds;
+            if (countTime > 5000)
+            {
+                countTime = 0;
+                isScaling = false;
+                scale = 1.0f;
+            }
+
             if (status == RoleStatus.jumping)
             {
                 if (isMovingUp)

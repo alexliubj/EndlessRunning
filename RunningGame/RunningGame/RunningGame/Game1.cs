@@ -26,9 +26,11 @@ namespace RunningGame
         DrawableGameComponent mainGame;
         DrawableGameComponent helpComp;
         DrawableGameComponent aboutComp;
+        DrawableGameComponent startComp;
         OggSong bgsong1;
         OggSong bgsong2;
         OggSong bgsong3;
+        OggSong bgStart;
         OggSong currentBgSong;
 
         OggSong coinMusic;
@@ -44,6 +46,7 @@ namespace RunningGame
             MainIndex = 1, 
             HelpIndex = 2, 
             AboutIndex = 3, 
+            StartIndex = 4,
         };
 
         public enum SoundInstance
@@ -98,7 +101,7 @@ namespace RunningGame
             Components.Add(mainGame = new GamingScene(this));
             Components.Add(helpComp = new HelpScene(this));
             Components.Add(aboutComp = new AboutScene(this));
-
+            Components.Add(startComp = new StartScene(this));
             this.ComponetsInitialise();
 
             Content.RootDirectory = "Content";
@@ -109,6 +112,12 @@ namespace RunningGame
         /// </summary>
         private void ComponetsInitialise()
         {
+            startComp.Enabled = true;
+            startComp.Visible = true;
+
+            menuComp.Enabled = false;
+            menuComp.Visible = false;
+
             mainGame.Enabled = false;
             mainGame.Visible = false;
 
@@ -117,6 +126,7 @@ namespace RunningGame
 
             aboutComp.Enabled = false;
             aboutComp.Visible = false;
+
         }
 
         /// <summary>
@@ -140,6 +150,9 @@ namespace RunningGame
 
                         aboutComp.Enabled = false;
                         aboutComp.Visible = false;
+
+                        startComp.Enabled = false;
+                        startComp.Visible = false;
                     }
                     break;
                 case (int)MenuIndexs.AboutIndex:
@@ -155,6 +168,9 @@ namespace RunningGame
 
                         aboutComp.Enabled = true;
                         aboutComp.Visible = true;
+
+                        startComp.Enabled = false;
+                        startComp.Visible = false;
                     }
                     break;
                 case (int)MenuIndexs.HelpIndex:
@@ -170,6 +186,9 @@ namespace RunningGame
 
                         aboutComp.Enabled = false;
                         aboutComp.Visible = false;
+
+                        startComp.Enabled = false;
+                        startComp.Visible = false;
                     }
                     break;
                 case (int)MenuIndexs.MainIndex:
@@ -185,6 +204,28 @@ namespace RunningGame
 
                         aboutComp.Enabled = false;
                         aboutComp.Visible = false;
+
+                        startComp.Enabled = false;
+                        startComp.Visible = false;
+                    }
+                    break;
+
+                case (int)MenuIndexs.StartIndex:
+                    {
+                        menuComp.Enabled = false;
+                        menuComp.Visible = false;
+
+                        mainGame.Enabled = false;
+                        mainGame.Visible = false;
+
+                        helpComp.Enabled = false;
+                        helpComp.Visible = false;
+
+                        aboutComp.Enabled = false;
+                        aboutComp.Visible = false;
+
+                        startComp.Enabled = true;
+                        startComp.Visible = true;
                     }
                     break;
                 default:
@@ -220,6 +261,7 @@ namespace RunningGame
             bgsong3 = new OggSong(TitleContainer.OpenStream("r_bgm_01.ogg"), false);
             bgsong2 = new OggSong(TitleContainer.OpenStream("r_bgm_02.ogg"), false);
             bgsong1 = new OggSong(TitleContainer.OpenStream("u_bgm.ogg"), false);
+            bgStart = new OggSong(TitleContainer.OpenStream("r_comic.ogg"), false);
 
             coinMusic = new OggSong(TitleContainer.OpenStream(getStar[aRandom.Next(5)]), false);
             buttonClick = new OggSong(TitleContainer.OpenStream("u_btn_click.ogg"), false);
@@ -230,10 +272,11 @@ namespace RunningGame
             bgsong1.Repeat = true;
             bgsong2.Repeat = true;
             bgsong3.Repeat = true;
-            currentBgSong = bgsong1;
-            
+            bgStart.Repeat = true;
+            currentBgSong = bgStart;
 
-            bgsong1.Play();
+
+            bgStart.Play();
 
             // TODO: use this.Content to load your game content here
         }
@@ -266,6 +309,11 @@ namespace RunningGame
                     currentBgSong = bgsong3;
                     currentBgSong.Play();
                    break;
+                case 3:
+                    currentBgSong.Stop();
+                    currentBgSong = bgStart;
+                    currentBgSong.Play();
+                    break;
                 default:
                     break;
             }

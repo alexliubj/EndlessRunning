@@ -44,9 +44,6 @@ namespace RunningGame.Coins
         //}
 
         char emptyTile;
-
-        
-
         public Texture2D TileSheet
         {
             get;

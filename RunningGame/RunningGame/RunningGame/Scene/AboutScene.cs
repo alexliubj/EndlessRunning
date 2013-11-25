@@ -17,6 +17,9 @@ namespace RunningGame.Scene
     /// </summary>
     public class AboutScene : DrawableGameComponent
     {
+        private Vector2 linesPosition = new Vector2();
+        private Vector2 lineVelo = new Vector2(0,-1);
+        private Texture2D texture;
         Game gameObject;
         public AboutScene(Game game)
             : base(game)
@@ -35,7 +38,6 @@ namespace RunningGame.Scene
         }
         const int NUMBER_OF_BUTTONS = 1,
             START_BUTTON_INDEX = 0,
-          
             BUTTON_HEIGHT = 40,
             BUTTON_WIDTH = 88;
 
@@ -153,6 +155,7 @@ namespace RunningGame.Scene
                     {
                         //start the main component
                         ((Game1)gameObject).ChangeComponets(0);
+                      
                     }
                     break;
                 default:
@@ -209,6 +212,8 @@ namespace RunningGame.Scene
 
             update_buttons();
             handle_keyboard();
+            if(linesPosition.Y >= 30)
+            linesPosition += lineVelo;
 
             // TODO: Add your update logic here
 
@@ -221,7 +226,7 @@ namespace RunningGame.Scene
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(background_color);
+            GraphicsDevice.Clear(Color.Black);
 
             spriteBatch.Begin();
 
@@ -231,6 +236,9 @@ namespace RunningGame.Scene
             {
                 spriteBatch.Draw(button_texture[i], button_rectangle[i], button_color[i]);
             }
+
+            spriteBatch.Draw(texture, linesPosition, Color.White);
+
             spriteBatch.End();
             base.Draw(gameTime);
         }
@@ -258,6 +266,7 @@ namespace RunningGame.Scene
                 y += BUTTON_HEIGHT;
             }
             Game.IsMouseVisible = true;
+            linesPosition = new Vector2(Game.Window.ClientBounds.Width / 2-120, Game.Window.ClientBounds.Height);
             background_color = Color.CornflowerBlue;
             base.Initialize();
         }
@@ -273,9 +282,9 @@ namespace RunningGame.Scene
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             button_texture[START_BUTTON_INDEX] =
-                Game.Content.Load<Texture2D>(@"Sprites/easy");
+                Game.Content.Load<Texture2D>(@"Sprites/back");
             backgroundTexture = Game.Content.Load<Texture2D>(@"Sprites/cover2");
-
+            texture = Game.Content.Load<Texture2D>(@"Sprites/slash");
             // TODO: use this.Content to load your game content here
         }
 

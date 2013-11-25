@@ -242,7 +242,7 @@ namespace RunningGame.Componets
             // TODO: Add your initialization logic here
             // starting x and y locations to stack buttons 
             // vertically in the middle of the screen
-            int x = Game.Window.ClientBounds.Width/2 - BUTTON_WIDTH / 2;
+            int x = Game.Window.ClientBounds.Width - BUTTON_WIDTH / 2 - 200;
             int y = Game.Window.ClientBounds.Height/2 - 
                 NUMBER_OF_BUTTONS / 2 * BUTTON_HEIGHT - 
                 (NUMBER_OF_BUTTONS%2)*BUTTON_HEIGHT/2;
@@ -251,6 +251,9 @@ namespace RunningGame.Componets
                 button_state[i] = BState.UP;
                 button_color[i] = Color.White;
                 button_timer[i] = 0.0;
+                if(i>=3)
+                    button_rectangle[i] = new Rectangle(x+20, y, 44, BUTTON_HEIGHT);
+                else
                 button_rectangle[i] = new Rectangle(x, y, BUTTON_WIDTH, BUTTON_HEIGHT);
                 y += BUTTON_HEIGHT;
             }
@@ -268,21 +271,21 @@ namespace RunningGame.Componets
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             button_texture[START_BUTTON_INDEX] = 
-                Game.Content.Load<Texture2D>(@"Sprites/easy");
+                Game.Content.Load<Texture2D>(@"Sprites/start");
             button_texture[SETTINGS_BUTTON_INDEX] =
-                Game.Content.Load<Texture2D>(@"Sprites/medium");
+                Game.Content.Load<Texture2D>(@"Sprites/help");
             button_texture[ABOUT_BUTTON_INDEX] =
-                Game.Content.Load<Texture2D>(@"Sprites/hard");
+                Game.Content.Load<Texture2D>(@"Sprites/about");
             backgroundTexture = Game.Content.Load<Texture2D>(@"Sprites/cover2");
 
             button_texture[BGMUSIC_BUTTON_INDEX] =
-                Game.Content.Load<Texture2D>(@"Sprites/hard");
+                Game.Content.Load<Texture2D>(@"Sprites/MusicOn");
             button_texture[SOUNDS_BUTTON_INDEX] =
-                Game.Content.Load<Texture2D>(@"Sprites/medium");
+                Game.Content.Load<Texture2D>(@"Sprites/SoundOn");
             button_texture[BGMUSIC_BUTTON_OFF_INDEX] =
-                Game.Content.Load<Texture2D>(@"Sprites/easy");
+                Game.Content.Load<Texture2D>(@"Sprites/MusicOff");
             button_texture[SOUNDS_BUTTON_OFF_INDEX] =
-                Game.Content.Load<Texture2D>(@"Sprites/easy");
+                Game.Content.Load<Texture2D>(@"Sprites/SoundOff");
 
             // TODO: use this.Content to load your game content here
         }

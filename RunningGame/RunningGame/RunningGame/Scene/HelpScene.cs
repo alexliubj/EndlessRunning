@@ -270,11 +270,11 @@ namespace RunningGame.Scene
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(background_color);
+            GraphicsDevice.Clear(Color.Black);
 
             spriteBatch.Begin();
 
-            spriteBatch.Draw(backgroundTexture[currentIndex], new Vector2(80,80), Color.White);
+            spriteBatch.Draw(backgroundTexture[currentIndex], new Vector2(80,30), Color.White);
 
             for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
             {
@@ -294,15 +294,15 @@ namespace RunningGame.Scene
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             button_texture[Back_BUTTON_INDEX] =
-                Game.Content.Load<Texture2D>(@"Sprites/easy");
+                Game.Content.Load<Texture2D>(@"Sprites/back");
             button_texture[LEFT_BUTTON_INDEX] =
-                Game.Content.Load<Texture2D>(@"Sprites/medium");
+                Game.Content.Load<Texture2D>(@"Sprites/leftbutton");
             button_texture[RIGHT_BUTTON_INDEX] =
-                Game.Content.Load<Texture2D>(@"Sprites/hard");
-            backgroundTexture[0] = Game.Content.Load<Texture2D>(@"Sprites/spring_bg1_1");
-            backgroundTexture[1] = Game.Content.Load<Texture2D>(@"Sprites/spring_bg1_2");
-            backgroundTexture[2] = Game.Content.Load<Texture2D>(@"Sprites/spring_bg1_3");
-            backgroundTexture[3] = Game.Content.Load<Texture2D>(@"Sprites/spring_bg1_4");
+                Game.Content.Load<Texture2D>(@"Sprites/rightButton");
+            backgroundTexture[0] = Game.Content.Load<Texture2D>(@"start/photo1");
+            backgroundTexture[1] = Game.Content.Load<Texture2D>(@"start/photo2");
+            backgroundTexture[2] = Game.Content.Load<Texture2D>(@"start/photo3");
+            backgroundTexture[3] = Game.Content.Load<Texture2D>(@"start/photo5");
             // TODO: use this.Content to load your game content here
         }
 
