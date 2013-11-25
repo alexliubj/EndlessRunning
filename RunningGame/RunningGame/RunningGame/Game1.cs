@@ -38,6 +38,7 @@ namespace RunningGame
         OggSong jump;
         OggSong secondJump;
         OggSong die;
+        OggSong landing;
         Random aRandom = new Random(100);
         string[] getStar = new string[] { "r_get_star_01.ogg", "r_get_star_02.ogg", "r_get_star_03.ogg", "r_get_star_04.ogg", "r_get_star_05.ogg", "r_get_star_06.ogg" };
         enum MenuIndexs
@@ -55,7 +56,8 @@ namespace RunningGame
             buttonClick = 1,
             jump,
             secondjump,
-            die
+            die,
+            landing,
         };
 
         public void PlaySoundInstance(SoundInstance si)
@@ -85,6 +87,11 @@ namespace RunningGame
                 case SoundInstance.die:
                     {
                         die.Play();
+                    }
+                    break;
+                case SoundInstance.landing:
+                    {
+                        landing.Play();
                     }
                     break;
                 default:
@@ -268,7 +275,7 @@ namespace RunningGame
             jump = new OggSong(TitleContainer.OpenStream("r_jump.ogg"), false);
             secondJump = new OggSong(TitleContainer.OpenStream("r_second_jump_boy.ogg"), false);
             die = new OggSong(TitleContainer.OpenStream("r_ch_die.ogg"), false);
-
+            landing = new OggSong(TitleContainer.OpenStream("r_ch_landing.ogg"), false);
             bgsong1.Repeat = true;
             bgsong2.Repeat = true;
             bgsong3.Repeat = true;
@@ -281,9 +288,9 @@ namespace RunningGame
             // TODO: use this.Content to load your game content here
         }
 
-        public void PauseAndResumeSound(int status)
+        public void PauseAndResumeSound(bool status)
         {
-            if (status == 0) // playing
+            if (status) // playing
                 currentBgSong.Pause();
             else
                 currentBgSong.Resume();

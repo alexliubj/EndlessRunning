@@ -38,6 +38,7 @@ Content\Sprites\leftbutton.xnb
 Content\Sprites\about.xnb
 Content\Sprites\Slash.xnb
 Content\Sprites\pause.xnb
+Content\Sprites\TrailVerion.xnb
 Content\Maps\m02.txt
 Content\Maps\m01.txt
 Config\GameConfigue.xml
@@ -49,6 +50,7 @@ Config\winter_p4.xml
 Config\witch_p.xml
 Config\spring_p1.xml
 Config\spring_p2.xml
+r_ch_landing.ogg
 r_comic.ogg
 r_bgm_01.ogg
 r_bgm_02.ogg

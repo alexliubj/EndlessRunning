@@ -54,7 +54,8 @@ namespace RunningGame.Scene
         Runner aRunner;
         CoinsManager map1;
         MapManager mainMap;
-
+        Texture2D trailVersion;
+        private double elapsedTime;
         XMLParseUtils aTestParse = new XMLParseUtils();
         TextureObject springbgObj1;
         TextureObject springbgObj2;
@@ -242,7 +243,9 @@ namespace RunningGame.Scene
                 case PAUSEBUTTON_INDEX:
                     {
                         //
+                        ((Game1)gameObject).PauseAndResumeSound(Program.GameStatus);
                         Program.GameStatus = !Program.GameStatus;
+                        
                     }
                     break;
                 case BACK_BUTTON_INDEX:
@@ -346,97 +349,106 @@ namespace RunningGame.Scene
             //start beyond left of screen and keep drawing until 
             //the right is beyond the right of the screen
 
-            
+            elapsedTime += gameTime.ElapsedGameTime.TotalMilliseconds;
+            distance = (int)gameTime.TotalGameTime.TotalMilliseconds / 100;
+            if (distance < 500)
+                level = 1;
+            else if (distance < 1000)
+                level = 2;
+            else
+            {
+                level = 3;
+            }
+            //*****************************************************
+            float currentLeft1 = position1.X;
+            while (currentLeft1 < screenWidth)
+            {
+                spriteBatch.Draw(springbg1, new Vector2(currentLeft1, offsetY1), Color.White);
+                currentLeft1 += bgWidth1 - 2;
+            }
 
-                distance = (int)gameTime.TotalGameTime.Seconds * 100;
-                //*****************************************************
-                float currentLeft1 = position1.X;
-                while (currentLeft1 < screenWidth)
-                {
-                    spriteBatch.Draw(springbg1, new Vector2(currentLeft1, offsetY1), Color.White);
-                    currentLeft1 += bgWidth1 - 2;
-                }
-
-                float currentLeft5 = position5.X;
-                while (currentLeft5 < screenWidth)
-                {
-                    spriteBatch.Draw(springbg5, new Vector2(currentLeft5, offsetY5), Color.White);
-                    currentLeft5 += bgWidth2 - 2;
-                }
-
-
-                //********************************front bg *********************
-
-                float currentLeftfront = frontbgPos1.X;
-                while (currentLeftfront < screenWidth)
-                {
-                    spriteBatch.Draw(spring1, new Vector2(currentLeftfront, offsetFrontbgY1), frontbgSourceRect1, Color.White);
-                    currentLeftfront += bgFrontWidth1 -2;
-                }
-
-                //**********************************road sprites*******************
+            float currentLeft5 = position5.X;
+            while (currentLeft5 < screenWidth)
+            {
+                spriteBatch.Draw(springbg5, new Vector2(currentLeft5, offsetY5), Color.White);
+                currentLeft5 += bgWidth2 - 2;
+            }
 
 
-                float currentmid1 = roadMidPos1.X;
-                while (currentmid1 < screenWidth)
-                {
-                  //  spriteBatch.Draw(spring1, new Vector2(currentmid1, roadMidOffset1), roadMidRect1, Color.White);
-                    currentmid1 += roadMidWidth1;
-                }
+            //********************************front bg *********************
 
-                float currentmid2 = roadMidPos2.X;
-                while (currentmid2 < screenWidth)
-                {
-                  //  spriteBatch.Draw(spring2, new Vector2(currentmid2, roadMidOffset2), roadMidRect2, Color.White);
-                    currentmid2 += roadMidWidth2;
-                }
+            float currentLeftfront = frontbgPos1.X;
+            while (currentLeftfront < screenWidth)
+            {
+                spriteBatch.Draw(spring1, new Vector2(currentLeftfront, offsetFrontbgY1), frontbgSourceRect1, Color.White);
+                currentLeftfront += bgFrontWidth1 - 2;
+            }
 
-                float currentmid3 = roadMidPos3.X;
-                int gap = gapBetween.Next(50, 100);
-                while (currentmid3 < screenWidth)
-                {
-                    //spriteBatch.Draw(spring1, new Vector2(currentmid3, roadMidOffset3), roadSlabRect, Color.White);
-                    currentmid3 += roadMidWidth3 + gap;
-                }
+            //**********************************road sprites*******************
 
 
-                spriteBatch.Draw(spring2, cloudPosition1, cloudRect, Color.White);
-                spriteBatch.Draw(spring2, cloudPosition2, cloudRect2, Color.White);
-                spriteBatch.Draw(spring2, cloudPosition3, cloudRect3, Color.White);
+            float currentmid1 = roadMidPos1.X;
+            while (currentmid1 < screenWidth)
+            {
+                //  spriteBatch.Draw(spring1, new Vector2(currentmid1, roadMidOffset1), roadMidRect1, Color.White);
+                currentmid1 += roadMidWidth1;
+            }
 
-                mainMap.Draw(spriteBatch);
-                map1.Draw(spriteBatch);
-                //****************************Fonts********************
-                string output = "Distance:" + distance;
-                Vector2 FontOrigin = distanceFont.MeasureString(output) / 2;
-                spriteBatch.DrawString(distanceFont, output, distanceFontPostion, Color.Black,
-                    0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
-                spriteBatch.DrawString(distanceFont, output, new Vector2(distanceFontPostion.X + 1, distanceFontPostion.Y + 1), Color.White,
-                    0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f); //shadow
+            float currentmid2 = roadMidPos2.X;
+            while (currentmid2 < screenWidth)
+            {
+                //  spriteBatch.Draw(spring2, new Vector2(currentmid2, roadMidOffset2), roadMidRect2, Color.White);
+                currentmid2 += roadMidWidth2;
+            }
 
-                output = "Score:" + score;
-                FontOrigin = scoreFont.MeasureString(output) / 2;
-                spriteBatch.DrawString(scoreFont, output, scoreFontPosition, Color.Black,
-                    0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
-                spriteBatch.DrawString(scoreFont, output, new Vector2(scoreFontPosition.X + 1, scoreFontPosition.Y + 1), Color.White,
-                    0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
+            float currentmid3 = roadMidPos3.X;
+            int gap = gapBetween.Next(50, 100);
+            while (currentmid3 < screenWidth)
+            {
+                //spriteBatch.Draw(spring1, new Vector2(currentmid3, roadMidOffset3), roadSlabRect, Color.White);
+                currentmid3 += roadMidWidth3 + gap;
+            }
 
-                output = "Level:" + level;
-                FontOrigin = levelFont.MeasureString(output) / 2;
-                spriteBatch.DrawString(levelFont, output, levelFontPosition, Color.Black,
-                    0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
-                spriteBatch.DrawString(levelFont, output, new Vector2(levelFontPosition.X + 1, scoreFontPosition.Y + 1), Color.White,
-                    0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
-                //***************************ROLE**********************
+            spriteBatch.Draw(spring2, cloudPosition1, cloudRect, Color.White);
+            spriteBatch.Draw(spring2, cloudPosition2, cloudRect2, Color.White);
+            spriteBatch.Draw(spring2, cloudPosition3, cloudRect3, Color.White);
 
-                aRunner.Draw(spriteBatch);
+            mainMap.Draw(spriteBatch);
+            map1.Draw(spriteBatch);
+            //****************************Fonts********************
+            string output = "Distance:" + distance;
+            Vector2 FontOrigin = distanceFont.MeasureString(output) / 2;
+            spriteBatch.DrawString(distanceFont, output, distanceFontPostion, Color.Black,
+                0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
+            spriteBatch.DrawString(distanceFont, output, new Vector2(distanceFontPostion.X + 1, distanceFontPostion.Y + 1), Color.White,
+                0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f); //shadow
 
-                //***************************ROLE**********************
+            output = "Score:" + score;
+            FontOrigin = scoreFont.MeasureString(output) / 2;
+            spriteBatch.DrawString(scoreFont, output, scoreFontPosition, Color.Black,
+                0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
+            spriteBatch.DrawString(scoreFont, output, new Vector2(scoreFontPosition.X + 1, scoreFontPosition.Y + 1), Color.White,
+                0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
 
-             
+            output = "Level:" + level;
+            FontOrigin = levelFont.MeasureString(output) / 2;
+            spriteBatch.DrawString(levelFont, output, levelFontPosition, Color.Black,
+                0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
+            spriteBatch.DrawString(levelFont, output, new Vector2(levelFontPosition.X + 1, scoreFontPosition.Y + 1), Color.White,
+                0, FontOrigin, 1.0f, SpriteEffects.None, 0.5f);
+            //***************************ROLE**********************
 
-                draw_buttons();
-            
+            aRunner.Draw(spriteBatch);
+
+            //***************************ROLE**********************
+
+            draw_buttons();
+
+            if (elapsedTime > 1000)
+            {
+                // spriteBatch.Draw(trailVersion, new Vector2(), Color.WhiteSmoke);
+                // Program.GameStatus = false;
+            }
             spriteBatch.End();
             base.Draw(gameTime);
         }
@@ -461,6 +473,7 @@ namespace RunningGame.Scene
             bgWidth4 = springbg4.Width;
             bgWidth5 = springbg5.Width;
 
+            trailVersion = Game.Content.Load<Texture2D>(@"Sprites\TrailVerion");
 
             screenWidth = Game.GraphicsDevice.Viewport.Bounds.Width;
             springbgObj1 = aTestParse.parseXML(@"config/spring_p1.xml");
@@ -523,6 +536,7 @@ namespace RunningGame.Scene
             rectangleObj = alwaysObject.getFrameObjectByName(@"blue_boy1_jump.png");
             tempJumpRectangel = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
             aRunner = new Runner(alaways, tempRunRectArray, tempJumpRectangel);
+            aRunner.gameObject = gameObject;
             aRunner.status = Runner.RoleStatus.running;
 
             //********************************Load coins*************************************
@@ -622,25 +636,26 @@ namespace RunningGame.Scene
         {
             // TODO: Add your update code here
 
-
-            cloudPosition1 += cloudVelo[gapBetween.Next(0, 3)];
-            cloudPosition2 += cloudVelo[gapBetween.Next(0, 3)];
-             cloudPosition3 += cloudVelo[gapBetween.Next(0,3)];
-
-            if(cloudPosition1.X <=100)
-                cloudPosition1 = new Vector2(Game.GraphicsDevice.Viewport.Bounds.Width + gapBetween.Next(200), 
-                    gapBetween.Next(100, Game.GraphicsDevice.Viewport.Bounds.Height/2));
-
-            if (cloudPosition2.X <= 100)
-                cloudPosition2 = new Vector2(Game.GraphicsDevice.Viewport.Bounds.Width + gapBetween.Next(200), 
-                    gapBetween.Next(100, Game.GraphicsDevice.Viewport.Bounds.Height/2));
-
-            if (cloudPosition3.X <= 100)
-                cloudPosition3 = new Vector2(Game.GraphicsDevice.Viewport.Bounds.Width + gapBetween.Next(200), 
-                    gapBetween.Next(100, Game.GraphicsDevice.Viewport.Bounds.Height/2));
-
             if (Program.GameStatus)
             {
+                //*****************cloud******************************
+
+                cloudPosition1 += cloudVelo[gapBetween.Next(0, 3)];
+                cloudPosition2 += cloudVelo[gapBetween.Next(0, 3)];
+                cloudPosition3 += cloudVelo[gapBetween.Next(0, 3)];
+
+                if (cloudPosition1.X <= -500)
+                    cloudPosition1 = new Vector2(Game.GraphicsDevice.Viewport.Bounds.Width + gapBetween.Next(800),
+                        gapBetween.Next(50, Game.GraphicsDevice.Viewport.Bounds.Height / 2));
+
+                if (cloudPosition2.X <= -500)
+                    cloudPosition2 = new Vector2(Game.GraphicsDevice.Viewport.Bounds.Width + gapBetween.Next(600),
+                        gapBetween.Next(50, Game.GraphicsDevice.Viewport.Bounds.Height / 2));
+
+                if (cloudPosition3.X <= -500)
+                    cloudPosition3 = new Vector2(Game.GraphicsDevice.Viewport.Bounds.Width + gapBetween.Next(600),
+                        gapBetween.Next(50, Game.GraphicsDevice.Viewport.Bounds.Height / 2));
+
                 //*****************************************************
                 position1.X += speed;
                 if (position1.X > 0)

@@ -10,6 +10,7 @@ namespace RunningGame.Role
 {
     class Runner
     {
+        public Game gameObject;
         Texture2D roleTexture;
         List<RoleRun> roleRun = new List<RoleRun>();
         RoleJum roleJum;
@@ -207,6 +208,7 @@ namespace RunningGame.Role
                         if (roleJum.position.Y >= 350)
                         {
                              status = RoleStatus.running;
+                          ( (Game1)  gameObject).PlaySoundInstance(RunningGame.Game1.SoundInstance.landing);
                             isMovingUp = true;
                         }
                     }
@@ -231,6 +233,7 @@ namespace RunningGame.Role
                         if (roleJum.position.Y >= 350)
                         {
                             status = RoleStatus.running;
+                           ((Game1) gameObject).PlaySoundInstance(RunningGame.Game1.SoundInstance.landing);
                             secondIsMovingUp = true;
                         }
                     }

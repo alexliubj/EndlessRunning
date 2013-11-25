@@ -192,6 +192,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="Sprites\TrailVerion.png">
+      <Name>TrailVerion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <None Include="Maps\m02.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Name>m02</Name>
