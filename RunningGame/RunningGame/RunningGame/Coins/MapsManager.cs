@@ -111,6 +111,8 @@ namespace RunningGame.Maps
 
                     if (c == emptyTile)
                     {
+                        atile.positonTiles = new Vector2(startX,
+                        startY);
                         atile.isAlive = false;
                         startX += 30;
                     }
@@ -164,8 +166,32 @@ namespace RunningGame.Maps
             {
                 if (t.tileValue != emptyTile && t.isAlive) 
                 {
-                    spritebatch.Draw(TileSheet, t.positonTiles,
+                    if(t.tileValue == 'z')
+                        spritebatch.Draw(content.Load<Texture2D>(@"Sprites/always"), t.positonTiles,
                                 tileRegions[t.tileValue], Color.White);
+                    else if (t.tileValue == 'n')
+                    {
+                        spritebatch.Draw(content.Load<Texture2D>(@"Sprites/wleft"), t.positonTiles,
+                                tileRegions[t.tileValue], Color.White);
+                    }
+                    else if (t.tileValue == 'o')
+                    {
+                        spritebatch.Draw(content.Load<Texture2D>(@"Sprites/wright"), t.positonTiles,
+                                tileRegions[t.tileValue], Color.White);
+                    }
+                    else if (t.tileValue == 'p')
+                    {
+                        spritebatch.Draw(content.Load<Texture2D>(@"Sprites/wmid1"), t.positonTiles,
+                                tileRegions[t.tileValue], Color.White);
+                    }
+                    else if (t.tileValue == 'q')
+                    {
+                        spritebatch.Draw(content.Load<Texture2D>(@"Sprites/wmid2"), t.positonTiles,
+                                tileRegions[t.tileValue], Color.White);
+                    }
+                    else
+                        spritebatch.Draw(TileSheet, t.positonTiles,
+                                    tileRegions[t.tileValue], Color.White);
                 }
             }
         }
@@ -174,10 +200,7 @@ namespace RunningGame.Maps
         {
             foreach (Titles t in listTiles)
             {
-                if (t.isAlive)
-                {
-                    t.positonTiles = new Vector2(t.positonTiles.X + deltaSpeed.X, t.positonTiles.Y);
-                }
+                t.positonTiles = new Vector2(t.positonTiles.X + Program.PlatVelo.X, t.positonTiles.Y);
             }
         }
     }

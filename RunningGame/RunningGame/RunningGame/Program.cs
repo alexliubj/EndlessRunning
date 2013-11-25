@@ -1,4 +1,5 @@
 using System;
+using Microsoft.Xna.Framework;
 
 namespace RunningGame
 {
@@ -18,7 +19,7 @@ namespace RunningGame
 
         private static bool isSoundOn = true;
         private static bool currentGameStatus = true;
-
+        private static Vector2 currentPlatVelo = new Vector2(-2.5f, 0);
         public static bool IsSoundOn
         {
             get { return Program.isSoundOn; }
@@ -26,7 +27,7 @@ namespace RunningGame
         }
 
         private static bool isBgMusicOn = true;
-
+        private static bool isTestMode;
         public static bool IsBgMusicOn
         {
             get { return Program.isBgMusicOn; }
@@ -49,6 +50,17 @@ namespace RunningGame
             set { currentGameStatus = value; }
         }
 
+        public static Vector2 PlatVelo
+        {
+            get { return currentPlatVelo; }
+            set { currentPlatVelo = value; }
+        }
+
+        public static bool IsTestMode
+        {
+            get { return isTestMode; }
+            set { isTestMode = value; }
+        }
     }
 #endif
 }

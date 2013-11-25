@@ -64,6 +64,7 @@ namespace RunningGame.Scene
         float offsetX1 = -10, speed = -0.5f;
         float offsetX2 = 0, offsetX3 = 0, offsetX4 = 0, offsetX5 = 0;
         float offsetY1 = 380, offsetY2 = 0, offsetY3 = 0, offsetY4 = 0, offsetY5 = 250;
+        BulletsManager aManage;
 
         Vector2 position1 = new Vector2();
         Vector2 position2 = new Vector2(300, 0);
@@ -99,7 +100,7 @@ namespace RunningGame.Scene
         Rectangle roadLeftRect = new Rectangle();
         Rectangle roadSlabRect = new Rectangle();
         Random gapBetween = new Random(1000);
-
+        private bool isFinish;
         Rectangle cloudRect = new Rectangle();
         Rectangle cloudRect2 = new Rectangle();
         Rectangle cloudRect3 = new Rectangle();
@@ -348,16 +349,21 @@ namespace RunningGame.Scene
             spriteBatch.Begin();
             //start beyond left of screen and keep drawing until 
             //the right is beyond the right of the screen
-
+            
             elapsedTime += gameTime.ElapsedGameTime.TotalMilliseconds;
+            if(Program.GameStatus)
             distance = (int)gameTime.TotalGameTime.TotalMilliseconds / 100;
             if (distance < 500)
                 level = 1;
             else if (distance < 1000)
+            {
                 level = 2;
+                Program.PlatVelo = new Vector2(-3.5f, 0);
+            }
             else
             {
                 level = 3;
+                Program.PlatVelo = new Vector2(-4.5f, 0);
             }
             //*****************************************************
             float currentLeft1 = position1.X;
@@ -442,13 +448,13 @@ namespace RunningGame.Scene
 
             //***************************ROLE**********************
 
-            draw_buttons();
-
-            if (elapsedTime > 1000)
+            if (isFinish)
             {
-                // spriteBatch.Draw(trailVersion, new Vector2(), Color.WhiteSmoke);
-                // Program.GameStatus = false;
+                spriteBatch.Draw(trailVersion, new Vector2(), Color.WhiteSmoke);
+                Program.GameStatus = false;
             }
+            draw_buttons();
+            aManage.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }
@@ -535,14 +541,20 @@ namespace RunningGame.Scene
             tempRunRectArray[3] = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
             rectangleObj = alwaysObject.getFrameObjectByName(@"blue_boy1_jump.png");
             tempJumpRectangel = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
+            rectangleObj = alwaysObject.getFrameObjectByName(@"progress_final_flag.png");
+            Rectangle finishRect = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
+            rectangleObj = alwaysObject.getFrameObjectByName(@"fall_boy.png");
+            
             aRunner = new Runner(alaways, tempRunRectArray, tempJumpRectangel);
             aRunner.gameObject = gameObject;
             aRunner.status = Runner.RoleStatus.running;
-
+            aRunner.fallRect = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height); 
             //********************************Load coins*************************************
             map1 = new CoinsManager(Game.Content, Path.Combine(Game.Content.RootDirectory, @"Maps\m01.txt"), @"Sprites\coin_single", new Vector2(32, 32), '-');
             map1.AddRegion('a', new Rectangle(0, 0, 32, 32));
-            map1.AddRegion('b', new Rectangle(0, 0, 32, 32));
+            map1.AddRegion('c', new Rectangle(32, 0, 32, 32));
+            map1.AddRegion('b', new Rectangle(64, 0, 32, 32));
+            map1.AddRegion('d', new Rectangle(96, 0, 32, 32));
             //********************************Load Map*************************************
             rectangleObj = springbgObj1.getFrameObjectByName(@"spring_tree3.png");
             Rectangle treeRect = new Rectangle(rectangleObj.X, rectangleObj.Y, rectangleObj.Width, rectangleObj.Height);
@@ -573,6 +585,13 @@ namespace RunningGame.Scene
             dimensions['k'] = new Vector2(catRect.Width, catRect.Height);
             dimensions['l'] = new Vector2(dogRect.Width, dogRect.Height);
             dimensions['m'] = new Vector2(doghouseRect.Width, doghouseRect.Height);
+            dimensions['z'] = new Vector2(finishRect.Width, finishRect.Height);
+            //***********winter***************
+            dimensions['n'] = new Vector2(112,342);//left
+            dimensions['o'] = new Vector2(75, 342);//right
+            dimensions['p'] = new Vector2(151, 342);//mid1
+            dimensions['q'] = new Vector2(150, 342);//mid2
+            //***********winter***************
             mainMap = new MapManager(Game.Content, Path.Combine(Game.Content.RootDirectory, @"Maps\m02.txt"), @"Sprites\spring_p1", dimensions, '-');
             mainMap.AddRegion('a', roadMidRect1);
             mainMap.AddRegion('b', roadSlabRect);
@@ -588,7 +607,12 @@ namespace RunningGame.Scene
             mainMap.AddRegion('k', catRect);
             mainMap.AddRegion('l', dogRect);
             mainMap.AddRegion('m', doghouseRect);
-          
+            mainMap.AddRegion('z', finishRect);
+
+            mainMap.AddRegion('n', new Rectangle(0, 0, 112, 342));
+            mainMap.AddRegion('o', new Rectangle(0, 0, 75, 342));
+            mainMap.AddRegion('p', new Rectangle(0, 0, 151, 342));
+            mainMap.AddRegion('q', new Rectangle(0, 0, 150, 342));
             //*******************************************************************************
 
             //********************************Sprite Font************************************
@@ -602,8 +626,10 @@ namespace RunningGame.Scene
             levelFont = Game.Content.Load<SpriteFont>(@"Font\SpriteFont1");
             levelFontPosition = new Vector2(650, 30);
 
-            //********************************Sprite Font************************************
 
+            //********************************Sprite Font************************************
+            Texture2D bullets = gameObject.Content.Load<Texture2D>(@"Sprites\bullets");
+            aManage= new BulletsManager(bullets);
             load_button_content();
             base.LoadContent();
 
@@ -683,7 +709,6 @@ namespace RunningGame.Scene
                 if (roadMidPos1.X > 0)
                     roadMidPos1.X -= roadMidWidth1;
 
-
                 roadMidPos2.X += roadSpeed;
                 if (roadMidPos2.X > 0)
                     roadMidPos2.X -= roadMidWidth2;
@@ -721,18 +746,79 @@ namespace RunningGame.Scene
                 mainMap.UpdateTiles();
                 //**********************ROLE*******************************
 
-                aRunner.Update(gameTime);
-                CheckCollisionWithDetection();
+                
+                CheckCollisionWithCoinsMap();
+                checkCollionWithBullets();
+                checkCollionWithMap();
                 //**********************ROLE*******************************
 
+                aManage.Update(gameTime);
             }
+            aRunner.Update(gameTime);
 
             update_button(gameTime);
             base.Update(gameTime);
         }
 
+        public void checkCollionWithBullets()
+        {
+            foreach(Rectangle b in aManage.GetBulletsRectangle())
+            {
+                if (aRunner.CurrentRectangle().Intersects(b))
+                {
+                    //die..............
+                    this.RoleDead();
+                }
+            }
+        }
 
-        public void CheckCollisionWithDetection()
+        public void checkCollionWithMap()
+        {
+            foreach (RunningGame.Maps.Titles t in mainMap.listTiles)
+            {
+                if (t.isAlive && (t.tileValue == 'k' || t.tileValue == 'z'))
+                {
+                    Rectangle tRect = new Rectangle((int)t.positonTiles.X,
+                        (int)t.positonTiles.Y,
+                        (int)t.rectangle.Width,
+                        (int)t.rectangle.Height);
+                    if (aRunner.CurrentRectangle().Intersects(tRect))
+                    {
+                        if (t.tileValue == 'z')
+                            isFinish = true;
+                        else
+                        {
+                            //die.........
+                           this.RoleDead();
+                        }
+                    }
+                }
+                if (t.tileValue == '-' && t.yIndex ==4)
+                {
+                    Rectangle tRect = new Rectangle((int)t.positonTiles.X,
+                        (int)t.positonTiles.Y - 5,
+                        t.rectangle.Width,
+                        t.rectangle.Height);
+                    if (aRunner.CurrentRectangle().Intersects(tRect))
+                    {
+                        this.RoleDead();
+                    }
+                }
+
+            }
+        }
+
+        public void RoleDead()
+        {
+            if (!Program.IsTestMode)
+            {
+                aRunner.isDead = true;
+                Program.GameStatus = false;
+                ((Game1)gameObject).PlaySoundInstance(RunningGame.Game1.SoundInstance.die);
+            }
+        }
+
+        public void CheckCollisionWithCoinsMap()
         {
             foreach (RunningGame.Coins.Titles t in map1.listTiles)
             {
@@ -744,15 +830,37 @@ namespace RunningGame.Scene
                         t.isAlive = false;
                         ((Game1)gameObject).PlaySoundInstance(RunningGame.Game1.SoundInstance.CoinMusic);
                         score += 10;
+                        
                     }
                 }
-                else if (t.isAlive && t.tileValue == 'b') // monster
+                else if (t.isAlive && t.tileValue == 'b') // 
                 {
+                    Rectangle tRect = new Rectangle((int)t.positonTiles.X, (int)t.positonTiles.Y, 32, 32);
+                    if (aRunner.CurrentRectangle().Intersects(tRect))
+                    {
+                        t.isAlive = false;
+                        ((Game1)gameObject).PlaySoundInstance(RunningGame.Game1.SoundInstance.CoinMusic);
+                        score += 50;
+                    }
                 }
                 else if (t.isAlive && t.tileValue == 'c') //tool1
-                { }
-                else if (t.isAlive && t.tileValue == 'd') //tool2
-                { }
+                {
+                    Rectangle tRect = new Rectangle((int)t.positonTiles.X, (int)t.positonTiles.Y, 32, 32);
+                    if (aRunner.CurrentRectangle().Intersects(tRect))
+                    {
+                        t.isAlive = false;
+                        aRunner.IsScaling = true;
+                    }
+                }
+                else if (t.isAlive && t.tileValue == 'd') //fire
+                {
+                    Rectangle tRect = new Rectangle((int)t.positonTiles.X, (int)t.positonTiles.Y, 32, 32);
+                    if (aRunner.CurrentRectangle().Intersects(tRect))
+                    {
+                        t.isAlive = false;
+                        aManage.FireBullet(new Vector2(1200, 340));
+                    }
+                }
                 else if (t.isAlive && t.tileValue == 'e') //tool3
                 { }
                 else

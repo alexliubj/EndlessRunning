@@ -16,23 +16,30 @@ namespace RunningGame.Role
     }
     public class BulletsManager
     {
+        public BulletsManager(Texture2D bullets)
+        {
+            this.textures = bullets;
+        }
         private List<Bullet> listBullet = new List<Bullet>();
         private int widthBullet = 0;
         private int heightBullet = 0;
-        private Vector2[] veloArray = new Vector2[] { };
+        private Vector2[] veloArray = new Vector2[] { new Vector2(-5.5f,0)};
         private Random rand = new Random(1100);
         private Texture2D textures;
 
         public void Update(GameTime gt)
         {
-            foreach (Bullet b in listBullet)
+            if (listBullet.Count != 0)
             {
-                if (b.position.X < 0)
+                foreach (Bullet b in listBullet)
                 {
-                    b.isAlive = false;
-                    listBullet.Remove(b);
+                    if (b.position.X < 0)
+                    {
+                        b.isAlive = false;
+                        //listBullet.Remove(b);
+                    }
+                    b.position += veloArray[0];
                 }
-                b.position += veloArray[rand.Next(5)];
             }
         }
 
@@ -45,9 +52,8 @@ namespace RunningGame.Role
             }
         }
 
-        public void FireBullet(Vector2 pos,Texture2D texture)
+        public void FireBullet(Vector2 pos)
         {
-            textures = texture;
             Bullet aBullet = new Bullet() { isAlive = true, index = 0, position = pos };
             listBullet.Add(aBullet);
         }
