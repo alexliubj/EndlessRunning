@@ -27,7 +27,7 @@ namespace RunningGame
         }
 
         private static bool isBgMusicOn = true;
-        private static bool isTestMode;
+        private static bool isTestMode = true;
         public static bool IsBgMusicOn
         {
             get { return Program.isBgMusicOn; }

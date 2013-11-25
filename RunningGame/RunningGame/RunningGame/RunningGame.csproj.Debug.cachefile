@@ -12,6 +12,8 @@ Content\Sprites\spring_bg1_4.xnb
 Content\Sprites\spring_bg1_5.xnb
 Content\Sprites\spring_p1.xnb
 Content\Sprites\spring_p2.xnb
+Content\Sprites\cover_p1.xnb
+Content\Sprites\cover2.xnb
 Content\Sprites\result_big_star.xnb
 Content\Sprites\pause_panel_title.xnb
 Content\Start\photo1.xnb
@@ -42,8 +44,6 @@ Content\Sprites\coin_5k.xnb
 Content\Sprites\back.xnb
 Content\Sprites\about.xnb
 Content\Sprites\bullets.xnb
-Content\Sprites\cover_p1.xnb
-Content\Sprites\cover2.xnb
 Content\Font\SpriteFont1.xnb
 Content\Maps\m02.txt
 Content\Maps\m01.txt
