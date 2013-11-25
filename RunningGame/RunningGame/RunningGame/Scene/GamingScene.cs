@@ -355,7 +355,7 @@ namespace RunningGame.Scene
             distance = (int)gameTime.TotalGameTime.TotalMilliseconds / 100;
             if (distance < 500)
                 level = 1;
-            else if (distance < 1000)
+            else if (distance < 800)
             {
                 level = 2;
                 Program.PlatVelo = new Vector2(-3.5f, 0);
