@@ -7,3 +7,7 @@ For this game Screenshot Please check:
 
 https://github.com/alexliubj/EndlessRunning/wiki/Screenshots-and-Alpha-Version-Release
 
+![ScreenShot1](http://centennialsoft.ca/Pictures/screenshot1.PNG)
+![ScreenShot2](http://centennialsoft.ca/Pictures/screenshot2.PNG)
+![ScreenShot2](http://centennialsoft.ca/Pictures/screenshot3.PNG)
+![ScreenShot2](http://centennialsoft.ca/Pictures/screenshot4.PNG)
